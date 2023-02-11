@@ -1,14 +1,12 @@
 <?php
-declare (strict_types = 1);
 
-namespace app;
+declare(strict_types=1);
 
-use think\Service;
+namespace app\provider;
 
-/**
- * 应用服务类
- */
-class AppService extends Service
+use think\Service as ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
