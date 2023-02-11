@@ -1,49 +1,50 @@
 {
-    "name": "topthink/think",
-    "description": "the new thinkphp framework",
+    "name": "phpcms/phpcms",
     "type": "project",
-    "keywords": [
-        "framework",
-        "thinkphp",
-        "ORM"
-    ],
-    "homepage": "https://www.thinkphp.cn/",
+    "description": "JB Content Management System.",
+    "keywords": ["phpcms", "thinkphp", "php",  "mysql", "cms"],
     "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
-        },
-        {
-            "name": "yunwuxin",
-            "email": "448901948@qq.com"
-        }
-    ],
     "require": {
-        "php": ">=7.2.5",
-        "topthink/framework": "^6.1.0",
-        "topthink/think-orm": "^2.0",
-        "topthink/think-filesystem": "^1.0"
+        "php": "^8.1",
+        "aliyuncs/oss-sdk-php": "^2.6",
+        "overtrue/easy-sms": "^2.3",
+        "overtrue/pinyin": "^5.0",
+        "overtrue/socialite": "^4.8",
+        "topthink/framework": "^6.1.1",
+        "topthink/think-captcha": "^3.0",
+        "topthink/think-filesystem": "^2.0.1",
+        "topthink/think-image": "^1.0",
+        "topthink/think-migration": "^3.0",
+        "topthink/think-orm": "^2.0.56",
+        "topthink/think-queue": "^3.0",
+        "topthink/think-view": "^1.0",
+        "w7corp/easywechat": "^6.10",
+        "yansongda/pay": "^3.2"
     },
     "require-dev": {
+        "laravel/pint": "^1.4",
         "symfony/var-dumper": "^4.2",
-        "topthink/think-trace": "^1.0"
+        "zircote/swagger-php": "^4.6"
     },
     "autoload": {
         "psr-4": {
-            "app\\": "app"
-        },
-        "psr-0": {
-            "": "extend/"
+            "app\\": "app/"
         }
-    },
-    "config": {
-        "preferred-install": "dist"
     },
     "scripts": {
         "post-autoload-dump": [
-            "@php think service:discover",
-            "@php think vendor:publish"
+            "@php artisan service:discover",
+            "@php artisan vendor:publish"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
-    }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
