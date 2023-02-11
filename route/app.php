@@ -1,10 +1,13 @@
 <?php
 
+use app\enums\GlobalConst;
 use think\facade\Route;
 use think\helper\Str;
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP6!';
+// 自定义控制台入口
+Route::get('/admin', function () {
+    session(GlobalConst::SYSTEM_TOKEN, Str::random());
+    return redirect('/console');
 });
 
 // 自动化路由
