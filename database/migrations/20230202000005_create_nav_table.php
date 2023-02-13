@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-return new class extends Migrator
+class CreateNavTable extends Migrator
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ return new class extends Migrator
      */
     public function up()
     {
-        // 内容评论表
-        $table = $this->table('comment');
+        // 导航表
+        $table = $this->table('nav');
         $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
 
             ->addTimestamps()
@@ -28,6 +28,6 @@ return new class extends Migrator
      */
     public function down()
     {
-        $this->dropTable('comment');
+        $this->dropTable('nav');
     }
-};
+}

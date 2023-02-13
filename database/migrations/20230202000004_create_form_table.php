@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-return new class extends Migrator
+class CreateFormTable extends Migrator
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ return new class extends Migrator
      */
     public function up()
     {
-        // 内容片段表
-        $table = $this->table('segment');
+        // 表单表
+        $table = $this->table('form');
         $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
 
             ->addTimestamps()
@@ -28,6 +28,6 @@ return new class extends Migrator
      */
     public function down()
     {
-        $this->dropTable('segment');
+        $this->dropTable('form');
     }
-};
+}

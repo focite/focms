@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-return new class extends Migrator
+class CreateRolePermissionRelationTable extends Migrator
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ return new class extends Migrator
      */
     public function up()
     {
-        // 用户角色关联表
-        $table = $this->table('user_role_relation');
+        // 管理员角色关联表
+        $table = $this->table('role_permission_relation');
         $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::unsignedInteger('user_id')->setComment('用户ID'))
             ->addColumn(Column::unsignedInteger('role_id')->setComment('角色ID'))
-            ->addIndex(['user_id', 'role_id'], true)
+            ->addColumn(Column::unsignedInteger('permission_id')->setComment('权限ID'))
+            ->addIndex(['role_id', 'permission_id'], true)
             ->save();
     }
 
@@ -28,6 +28,6 @@ return new class extends Migrator
      */
     public function down()
     {
-        $this->dropTable('user_role_relation');
+        $this->dropTable('role_permission_relation');
     }
-};
+}

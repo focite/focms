@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-return new class extends Migrator
+class CreateRoleTable extends Migrator
 {
     /**
      * Run the migrations.
@@ -32,4 +32,4 @@ return new class extends Migrator
     {
         $this->dropTable('role');
     }
-};
+}
