@@ -12,9 +12,9 @@ class CreateFormTable extends Migrator
      */
     public function up()
     {
-        // 表单表
-        $table = $this->table('form');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
+        //
+        $table = $this->table('form', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '表单表']);
+        $table
 
             ->addTimestamps()
             ->addSoftDelete()

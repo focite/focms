@@ -12,9 +12,8 @@ class CreateCommentTable extends Migrator
      */
     public function up()
     {
-        // 内容评论表
-        $table = $this->table('comment');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
+        $table = $this->table('comment', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '内容评论表']);
+        $table
 
             ->addTimestamps()
             ->addSoftDelete()

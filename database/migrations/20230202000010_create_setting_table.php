@@ -12,10 +12,8 @@ class CreateSettingTable extends Migrator
      */
     public function up()
     {
-        // 配置表
-        $table = $this->table('setting');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::unsignedInteger('parent_id')->setDefault(0)->setComment('父节点id'))
+        $table = $this->table('setting', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '配置表']);
+        $table->addColumn(Column::unsignedInteger('parent_id')->setDefault(0)->setComment('父节点id'))
             ->addColumn(Column::string('name')->setDefault('')->setComment('配置名称'))
             ->addColumn(Column::string('code')->setDefault('')->setComment('配置code'))
             ->addColumn(Column::string('type')->setDefault('')->setComment('配置类型：text、select、file、hidden等'))

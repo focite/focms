@@ -12,10 +12,8 @@ class CreateUserAuthTable extends Migrator
      */
     public function up()
     {
-        // 认证表
-        $table = $this->table('user_auth');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::unsignedInteger('user_id')->setComment('用户ID'))
+        $table = $this->table('user_auth', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '用户认证表']);
+        $table->addColumn(Column::unsignedInteger('user_id')->setComment('用户ID'))
             ->addColumn(Column::string('type')->setComment('凭证类型:username,email,wechat'))
             ->addColumn(Column::string('identifier')->setComment('唯一标识:如用户名,电子邮箱,openid'))
             ->addColumn(Column::string('credential')->setComment('凭证:密码或token'))

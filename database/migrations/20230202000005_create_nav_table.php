@@ -12,9 +12,8 @@ class CreateNavTable extends Migrator
      */
     public function up()
     {
-        // 导航表
-        $table = $this->table('nav');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
+        $table = $this->table('nav', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '导航表']);
+        $table
 
             ->addTimestamps()
             ->addSoftDelete()

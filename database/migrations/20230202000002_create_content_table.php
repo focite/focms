@@ -12,10 +12,8 @@ class CreateContentTable extends Migrator
      */
     public function up()
     {
-        // 内容表
-        $table = $this->table('content');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::string('title')->setComment('标题'))
+        $table = $this->table('content', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '内容表']);
+        $table->addColumn(Column::string('title')->setComment('标题'))
             ->addColumn(Column::string('keywords')->setComment('关键词'))
             ->addColumn(Column::string('description')->setComment('描述'))
             ->addColumn(Column::text('content')->setComment('描述'))

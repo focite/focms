@@ -12,9 +12,8 @@ class CreateAdsTable extends Migrator
      */
     public function up()
     {
-        // 广告表
-        $table = $this->table('ads');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
+        $table = $this->table('ads', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '广告表']);
+        $table
 
             ->addTimestamps()
             ->addSoftDelete()

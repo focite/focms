@@ -12,10 +12,8 @@ class CreatePermissionTable extends Migrator
      */
     public function up()
     {
-        // 权限表
-        $table = $this->table('permission');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::unsignedInteger('parent_id')->setDefault(0)->setComment('父级ID'))
+        $table = $this->table('permission', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '权限表']);
+        $table->addColumn(Column::unsignedInteger('parent_id')->setDefault(0)->setComment('父级ID'))
             ->addColumn(Column::string('name')->setDefault('')->setComment('规则名称'))
             ->addColumn(Column::string('rule')->setUnique()->setComment('规则标识'))
             ->addColumn(Column::string('icon')->setDefault('')->setComment('ICON图标'))

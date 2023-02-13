@@ -12,12 +12,10 @@ class CreateUserRoleRelationTable extends Migrator
      */
     public function up()
     {
-        // 用户角色关联表
-        $table = $this->table('user_role_relation');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::unsignedInteger('user_id')->setComment('用户ID'))
+        $table = $this->table('user_role_relation', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '用户角色关联表']);
+        $table->addColumn(Column::unsignedInteger('user_id')->setComment('用户ID'))
             ->addColumn(Column::unsignedInteger('role_id')->setComment('角色ID'))
-            ->addIndex(['user_id', 'role_id'], true)
+            ->addIndex(['user_id', 'role_id'], ['unique' => true])
             ->save();
     }
 

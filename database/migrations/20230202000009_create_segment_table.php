@@ -12,9 +12,8 @@ class CreateSegmentTable extends Migrator
      */
     public function up()
     {
-        // 内容片段表
-        $table = $this->table('segment');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
+        $table = $this->table('segment', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '内容片段表']);
+        $table
 
             ->addTimestamps()
             ->addSoftDelete()

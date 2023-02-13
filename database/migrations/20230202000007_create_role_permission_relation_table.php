@@ -12,12 +12,11 @@ class CreateRolePermissionRelationTable extends Migrator
      */
     public function up()
     {
-        // 管理员角色关联表
-        $table = $this->table('role_permission_relation');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::unsignedInteger('role_id')->setComment('角色ID'))
+        //
+        $table = $this->table('role_permission_relation', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '用户角色关联表']);
+        $table->addColumn(Column::unsignedInteger('role_id')->setComment('角色ID'))
             ->addColumn(Column::unsignedInteger('permission_id')->setComment('权限ID'))
-            ->addIndex(['role_id', 'permission_id'], true)
+            ->addIndex(['role_id', 'permission_id'], ['unique' => true])
             ->save();
     }
 

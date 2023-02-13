@@ -7,9 +7,9 @@ class CreateUserTable extends Migrator
 {
     public function up()
     {
-        $table = $this->table('user');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
-            ->addColumn(Column::string('name')->setComment('昵称'))
+        // exp:  $table = $this->table('name', ['id' => false, 'primary_key' => ['user_id', 'follower_id']]);
+        $table = $this->table('user', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '用户表']);
+        $table->addColumn(Column::string('name')->setComment('昵称'))
             ->addColumn(Column::string('avatar')->setComment('头像'))
             ->addColumn(Column::date('birthday')->setComment('生日'))
             ->addColumn(Column::string('username')->setUnique()->setComment('登录用户名'))

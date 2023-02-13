@@ -12,9 +12,8 @@ class CreateStatsTable extends Migrator
      */
     public function up()
     {
-        // 统计表
-        $table = $this->table('stats');
-        $table->addColumn(Column::unsignedInteger('id')->setUnsigned()->setComment('编号'))
+        $table = $this->table('stats', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '统计表']);
+        $table
 
             ->addTimestamps()
             ->addSoftDelete()
