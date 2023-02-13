@@ -1,6 +1,11 @@
+/.fleet
 /.idea
 /.vscode
+/node_modules
+/public/admin
 /vendor
+.env
+.env.backup
+.env.production
 *.lock
 *.log
-.env

@@ -1,12 +1,15 @@
 {
     "name": "phpcms/phpcms",
     "type": "project",
-    "description": "JB Content Management System.",
-    "keywords": ["phpcms", "thinkphp", "php",  "mysql", "cms"],
+    "description": "PHP Content Management System.",
+    "keywords": ["phpcms", "php",  "mysql", "cms", "thinkphp"],
     "license": "Apache-2.0",
     "require": {
         "php": "^8.1",
         "aliyuncs/oss-sdk-php": "^2.6",
+        "barryvdh/laravel-dompdf": "^2.0",
+        "firebase/php-jwt": "^6.3",
+        "maatwebsite/excel": "^3.1",
         "overtrue/easy-sms": "^2.3",
         "overtrue/pinyin": "^5.0",
         "overtrue/socialite": "^4.8",
@@ -19,6 +22,7 @@
         "topthink/think-queue": "^3.0",
         "topthink/think-view": "^1.0",
         "w7corp/easywechat": "^6.10",
+        "workerman/gateway-worker": "^4.0",
         "yansongda/pay": "^3.2"
     },
     "require-dev": {
@@ -33,6 +37,7 @@
     },
     "scripts": {
         "post-autoload-dump": [
+            "app\\support\\ComposerScripts::postAutoloadDump",
             "@php artisan service:discover",
             "@php artisan vendor:publish"
         ],
@@ -45,6 +50,6 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

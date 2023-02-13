@@ -8,6 +8,46 @@
 composer create-project phpcms/phpcms
 ```
 
+## ENV配置
+
+```
+cp .env.example .env
+```
+
+## 数据库配置
+
+编辑 .env 文件，修改数据库连接信息：
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=phpcms
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+## 数据迁移及填充
+
+```
+php artisan migrate:run
+php artisan seed:run
+```
+
+## 运行
+
+现在只需要做最后一步来验证是否正常运行。
+
+进入命令行下面，执行下面指令
+
+```
+php artisan run
+```
+
+在浏览器中输入地址：
+
+http://localhost:8000/
+
 ## 目录结构
 
 ```
@@ -26,6 +66,14 @@ app                   核心应用文件
   service             核心业务服务
   support             支持文件
 bootstrap             核心框架启动文件
+config                全局配置
+database              数据库文件
+public                公网访问目录
+resources             资源文件
+routes                路由配置
+storage               存储目录
+tests                 测试目录
+vendor                composer依赖
 ```
 
 ## 请求周期
@@ -71,19 +119,9 @@ location / {
 - 启动 laragon，选择 PHP 版本
 - 安装 sourcetree https://www.sourcetreeapp.com/
 
-## 测试运行
+## 在线文档
 
-现在只需要做最后一步来验证是否正常运行。
-
-进入命令行下面，执行下面指令
-
-```
-php artisan run
-```
-
-在浏览器中输入地址：
-
-http://localhost:8000/
+[浏览文档](https://www.jbcms.com)
 
 ## 版权信息
 
