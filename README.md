@@ -121,7 +121,7 @@ location / {
 
 ## 在线文档
 
-[浏览文档](https://www.jbcms.com)
+[浏览文档](https://docs.phpcms.com)
 
 ## 版权信息
 
