@@ -14,9 +14,10 @@ class CreateUserAuthTable extends Migrator
     {
         $table = $this->table('user_auth', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '用户认证表']);
         $table->addColumn(Column::unsignedInteger('user_id')->setComment('用户ID'))
-            ->addColumn(Column::string('type')->setComment('凭证类型:username,email,wechat'))
-            ->addColumn(Column::string('identifier')->setComment('唯一标识:如用户名,电子邮箱,openid'))
+            ->addColumn(Column::string('type')->setComment('凭证类型:mobile,email,wechat'))
+            ->addColumn(Column::string('identifier')->setUnique()->setComment('唯一标识:如手机号码,电子邮箱,openid'))
             ->addColumn(Column::string('credential')->setComment('凭证:密码或token'))
+            ->addColumn(Column::dateTime('verified_time')->setNullable()->setComment('验证时间'))
             ->addColumn(Column::unsignedInteger('status')->setDefault(1)->setComment('状态:1正常,2禁用'))
             ->addTimestamps()
             ->addSoftDelete()

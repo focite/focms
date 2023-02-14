@@ -17,9 +17,9 @@ class CreatePermissionTable extends Migrator
             ->addColumn(Column::string('name')->setDefault('')->setComment('规则名称'))
             ->addColumn(Column::string('rule')->setUnique()->setComment('规则标识'))
             ->addColumn(Column::string('icon')->setDefault('')->setComment('ICON图标'))
-            ->addColumn(Column::boolean('is_menu')->setDefault(0)->setComment('是否为管理菜单'))
-            ->addColumn(Column::unsignedInteger('status')->setDefault(1)->setComment('状态:1正常,2禁用'))
+            ->addColumn(Column::boolean('is_menu')->setDefault(2)->setComment('是否为管理菜单：1是,2否'))
             ->addColumn(Column::unsignedInteger('sort')->setDefault(0)->setComment('排序'))
+            ->addColumn(Column::unsignedInteger('status')->setDefault(1)->setComment('状态:1正常,2禁用'))
             ->addTimestamps()
             ->addSoftDelete()
             ->save();

@@ -12,7 +12,6 @@ class CreateRolePermissionRelationTable extends Migrator
      */
     public function up()
     {
-        //
         $table = $this->table('role_permission_relation', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '用户角色关联表']);
         $table->addColumn(Column::unsignedInteger('role_id')->setComment('角色ID'))
             ->addColumn(Column::unsignedInteger('permission_id')->setComment('权限ID'))
