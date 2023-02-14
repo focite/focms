@@ -56,10 +56,7 @@ class GeneratorCommand extends Command
     }
 
     /**
-     * @param $entity
-     * @param $table
-     * @param $database
-     * @return void
+     * 生成实体类
      */
     private function entity($entity, $table, $database): void
     {
@@ -99,7 +96,6 @@ EOF;
 
     /**
      * 获取{$comment}
-     * @return {$type}
      */
     public function get{$method}(): {$type}
     {
@@ -108,7 +104,6 @@ EOF;
 
     /**
      * 设置{$comment}
-     * @param {$type} \$value
      */
     public function set{$method}({$type} \$value): void
     {
@@ -139,9 +134,7 @@ EOF;
     }
 
     /**
-     * @param $model
-     * @param $table
-     * @return void
+     * 生成模型类
      */
     private function model($model, $table): void
     {

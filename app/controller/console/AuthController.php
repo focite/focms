@@ -29,9 +29,6 @@ class AuthController extends Controller
 
     /**
      * 显示登录页面
-     *
-     * @param Request $request
-     * @return Redirect|View
      */
     public function login(Request $request): Redirect|View
     {
@@ -46,9 +43,6 @@ class AuthController extends Controller
 
     /**
      * 登录操作
-     *
-     * @param Request $request
-     * @return Json
      */
     public function loginHandle(Request $request): Json
     {
@@ -77,8 +71,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return View
+     * 显示忘记密码页面
      */
     public function forgot(Request $request): View
     {
@@ -86,8 +79,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Json
+     * 忘记密码操作
      */
     public function forgotHandle(Request $request): Json
     {
@@ -101,8 +93,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return View
+     * 显示重设密码页面
      */
     public function reset(Request $request): View
     {
@@ -114,8 +105,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Json
+     * 重设密码操作
      */
     public function resetHandle(Request $request): Json
     {

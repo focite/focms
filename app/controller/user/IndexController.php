@@ -9,7 +9,7 @@ use think\response\Json;
 class IndexController extends BaseController
 {
     /**
-     * @return Json
+     * 会员首页
      */
     public function index(): Json
     {

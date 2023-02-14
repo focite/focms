@@ -10,7 +10,7 @@ use think\Response;
 class CaptchaController extends BaseController
 {
     /**
-     * @return Response
+     * 显示图片验证码
      */
     public function index(): Response
     {

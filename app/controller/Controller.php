@@ -14,41 +14,31 @@ abstract class Controller
 {
     /**
      * 应用实例
-     *
-     * @var App
      */
     protected App $app;
 
     /**
      * Request实例
-     *
-     * @var Request
      */
     protected Request $request;
 
     /**
      * 是否批量验证
-     *
-     * @var bool
      */
     protected bool $batchValidate = false;
 
     /**
      * 控制器中间件
-     *
-     * @var array
      */
     protected array $middleware = [];
 
     /**
-     * @var string 客户端 ID
+     * 客户端 ID
      */
     protected string $clientName = 'X-Client-Id';
 
     /**
      * 构造方法
-     *
-     * @param  App  $app  应用对象
      */
     public function __construct(App $app)
     {
@@ -59,17 +49,15 @@ abstract class Controller
         $this->initialize();
     }
 
-    // 初始化
+    /**
+     * 初始化
+     */
     protected function initialize()
     {
     }
 
     /**
-     * @param  array  $data 数据
-     * @param  array|string  $validate 验证器名或者验证规则数组
-     * @param  array  $message 提示信息
-     * @param  bool  $batch 是否批量验证
-     * @return bool
+     * 表单验证器
      */
     protected function validate(array $data, array|string $validate, array $message = [], bool $batch = false): bool
     {
@@ -100,10 +88,6 @@ abstract class Controller
 
     /**
      * 返回 Json 数据格式
-     *
-     * @param $data
-     * @param  array  $headers
-     * @return Json
      */
     protected function json($data, array $headers = []): Json
     {
@@ -114,10 +98,6 @@ abstract class Controller
 
     /**
      * 返回封装后的API数据到客户端
-     *
-     * @param  mixed  $data 要返回的数据
-     * @param  array  $headers 发送的Header信息
-     * @return Json
      */
     protected function success($data, array $headers = []): Json
     {
@@ -130,11 +110,6 @@ abstract class Controller
 
     /**
      * 返回异常数据到客户端
-     *
-     * @param  string  $message
-     * @param  int  $code
-     * @param  array  $headers
-     * @return Json
      */
     protected function error(string $message = '', int $code = 40001, array $headers = []): Json
     {
@@ -147,8 +122,6 @@ abstract class Controller
 
     /**
      * 创建 Session ID
-     *
-     * @return string
      */
     protected function createSessionId(): string
     {

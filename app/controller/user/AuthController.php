@@ -28,14 +28,16 @@ class AuthController extends Controller
         [RedirectIfAuthenticated::class, [GlobalConst::USER_MODULE]],
     ];
 
+    /**
+     * 显示登录页面
+     */
     public function login(Request $request): View
     {
         return view('login');
     }
 
     /**
-     * @param Request $request
-     * @return Json
+     * 登录操作
      */
     public function loginHandle(Request $request): Json
     {
@@ -60,8 +62,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return View
+     * 显示注册页面
      */
     public function register(Request $request): View
     {
@@ -69,8 +70,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Json
+     * 注册操作
      */
     public function registerHandle(Request $request): Json
     {
@@ -84,8 +84,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return View
+     * 显示忘记密码页面
      */
     public function forgot(Request $request): View
     {
@@ -93,8 +92,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Json
+     * 忘记密码操作
      */
     public function forgotHandle(Request $request): Json
     {
@@ -108,8 +106,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return View
+     * 显示重置密码页面
      */
     public function reset(Request $request): View
     {
@@ -117,8 +114,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Json
+     * 重置密码操作
      */
     public function resetHandle(Request $request): Json
     {
@@ -132,8 +128,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Redirect
+     * 社会化登录
      */
     public function connect(Request $request): Redirect
     {
@@ -141,8 +136,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Redirect
+     * 社会化登录回调
      */
     public function callback(Request $request): Redirect
     {
@@ -150,8 +144,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return View
+     * 显示社会化登录绑定页面
      */
     public function bind(Request $request): View
     {
@@ -159,8 +152,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @return Json
+     * 社会化登录绑定操作
      */
     public function bindHandle(Request $request): Json
     {

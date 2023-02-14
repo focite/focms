@@ -8,13 +8,19 @@ use think\Service as ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * 服务注册
+     */
     public function register()
     {
-        // 服务注册
+        //
     }
 
+    /**
+     * 服务启动
+     */
     public function boot()
     {
-        // 服务启动
+        //
     }
 }

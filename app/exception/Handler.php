@@ -17,8 +17,6 @@ class Handler extends Handle
 {
     /**
      * 不需要记录信息（日志）的异常类列表
-     *
-     * @var array
      */
     protected $ignoreReport = [
         HttpException::class,
@@ -30,9 +28,6 @@ class Handler extends Handle
 
     /**
      * 记录异常信息（包括日志或者其它方式记录）
-     *
-     * @param  Throwable  $exception
-     * @return void
      */
     public function report(Throwable $exception): void
     {
@@ -42,10 +37,6 @@ class Handler extends Handle
 
     /**
      * Render an exception into an HTTP response.
-     *
-     * @param  \think\Request  $request
-     * @param  Throwable  $e
-     * @return Response
      */
     public function render($request, Throwable $e): Response
     {

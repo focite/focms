@@ -5,9 +5,6 @@ use app\support\Str;
 if (! function_exists('asset')) {
     /**
      * 生成资源文件链接
-     *
-     * @param  string  $path
-     * @return string
      */
     function asset(string $path = ''): string
     {
@@ -20,9 +17,6 @@ if (! function_exists('asset')) {
 if (! function_exists('is_email')) {
     /**
      * 验证邮箱地址格式
-     *
-     * @param $email
-     * @return bool
      */
     function is_email($email): bool
     {
@@ -33,9 +27,6 @@ if (! function_exists('is_email')) {
 if (! function_exists('is_mobile')) {
     /**
      * 验证手机号码格式
-     *
-     * @param $mobile
-     * @return bool
      */
     function is_mobile($mobile): bool
     {
@@ -48,10 +39,6 @@ if (! function_exists('is_mobile')) {
 if (! function_exists('route')) {
     /**
      * 路由链接url
-     *
-     * @param  string  $path
-     * @param  array   $vars
-     * @return string
      */
     function route(string $path = '', array $vars = []): string
     {
@@ -75,9 +62,6 @@ if (! function_exists('route')) {
 if (! function_exists('theme')) {
     /**
      * 主题文件链接
-     *
-     * @param  string  $path
-     * @return string
      */
     function theme(string $path = ''): string
     {

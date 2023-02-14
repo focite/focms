@@ -10,8 +10,6 @@ class IndexController extends BaseController
 {
     /**
      * @OA\Info(title="PHPCMS API", version="1.0")
-     *
-     * @return string
      */
     public function index(): string
     {

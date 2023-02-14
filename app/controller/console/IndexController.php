@@ -9,7 +9,7 @@ use think\response\Json;
 class IndexController extends BaseController
 {
     /**
-     * @return Json
+     * 管理数据
      */
     public function index(): Json
     {
@@ -18,8 +18,6 @@ class IndexController extends BaseController
 
     /**
      * 起始页
-     *
-     * @return Json
      */
     public function dashboard(): Json
     {
@@ -27,12 +25,12 @@ class IndexController extends BaseController
     }
 
     /**
-     * @return Json
+     * 注销登录
      */
     public function logout(): Json
     {
         session('auth_console', null);
 
-        return $this->succeed('logout');
+        return $this->success('logout');
     }
 }

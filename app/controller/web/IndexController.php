@@ -12,8 +12,7 @@ use Throwable;
 class IndexController extends BaseController
 {
     /**
-     * @param Request $request
-     * @return View
+     * 显示前台页面
      */
     public function index(Request $request): View
     {

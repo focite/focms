@@ -9,6 +9,9 @@ use think\facade\Config;
 
 abstract class BaseController extends Controller
 {
+    /**
+     * 初始化
+     */
     protected function initialize()
     {
         $default = config('app.default_theme', 'default');
