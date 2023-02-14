@@ -29,8 +29,8 @@
         </button>
     </div>
 </form>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wanganlin/layui-admin@master/component/layui/layui.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wanganlin/layui-admin@master/component/pear/pear.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/focite/layui-admin@master/component/layui/layui.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/focite/layui-admin@master/component/pear/pear.js"></script>
 <script type="text/javascript">
     layui.use(['encrypt', 'form', 'popup'], function () {
         var $ = layui.jquery,
