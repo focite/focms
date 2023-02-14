@@ -8,14 +8,14 @@ class SettingEntity
 {
 
     /**
+     * @var string 配置code
+     */
+    public string $code;
+
+    /**
      * @var int 
      */
     public int $id;
-
-    /**
-     * @var int 父节点id
-     */
-    public int $parent_id;
 
     /**
      * @var string 配置名称
@@ -23,14 +23,9 @@ class SettingEntity
     public string $name;
 
     /**
-     * @var string 配置code
+     * @var int 父节点id
      */
-    public string $code;
-
-    /**
-     * @var string 配置类型：text、select、file、hidden等
-     */
-    public string $type;
+    public int $parent_id;
 
     /**
      * @var string 配置数组索引
@@ -38,72 +33,22 @@ class SettingEntity
     public string $range;
 
     /**
-     * @var string 该项配置的值
-     */
-    public string $value;
-
-    /**
      * @var int 排序
      */
     public int $sort;
 
     /**
-     * 获取
-     * @return int
+     * @var string 配置类型：text、select、file、hidden等
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
+    public string $type;
 
     /**
-     * 设置
-     * @param int $value
+     * @var string 该项配置的值
      */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
-
-    /**
-     * 获取父节点id
-     * @return int
-     */
-    public function getParentId(): int
-    {
-        return $this->parent_id;
-    }
-
-    /**
-     * 设置父节点id
-     * @param int $value
-     */
-    public function setParentId(int $value): void
-    {
-        $this->parent_id = $value;
-    }
-
-    /**
-     * 获取配置名称
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * 设置配置名称
-     * @param string $value
-     */
-    public function setName(string $value): void
-    {
-        $this->name = $value;
-    }
+    public string $value;
 
     /**
      * 获取配置code
-     * @return string
      */
     public function getCode(): string
     {
@@ -112,7 +57,6 @@ class SettingEntity
 
     /**
      * 设置配置code
-     * @param string $value
      */
     public function setCode(string $value): void
     {
@@ -120,26 +64,55 @@ class SettingEntity
     }
 
     /**
-     * 获取配置类型：text、select、file、hidden等
-     * @return string
+     * 获取
      */
-    public function getType(): string
+    public function getId(): int
     {
-        return $this->type;
+        return $this->id;
     }
 
     /**
-     * 设置配置类型：text、select、file、hidden等
-     * @param string $value
+     * 设置
      */
-    public function setType(string $value): void
+    public function setId(int $value): void
     {
-        $this->type = $value;
+        $this->id = $value;
+    }
+
+    /**
+     * 获取配置名称
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * 设置配置名称
+     */
+    public function setName(string $value): void
+    {
+        $this->name = $value;
+    }
+
+    /**
+     * 获取父节点id
+     */
+    public function getParentId(): int
+    {
+        return $this->parent_id;
+    }
+
+    /**
+     * 设置父节点id
+     */
+    public function setParentId(int $value): void
+    {
+        $this->parent_id = $value;
     }
 
     /**
      * 获取配置数组索引
-     * @return string
      */
     public function getRange(): string
     {
@@ -148,7 +121,6 @@ class SettingEntity
 
     /**
      * 设置配置数组索引
-     * @param string $value
      */
     public function setRange(string $value): void
     {
@@ -156,26 +128,7 @@ class SettingEntity
     }
 
     /**
-     * 获取该项配置的值
-     * @return string
-     */
-    public function getValue(): string
-    {
-        return $this->value;
-    }
-
-    /**
-     * 设置该项配置的值
-     * @param string $value
-     */
-    public function setValue(string $value): void
-    {
-        $this->value = $value;
-    }
-
-    /**
      * 获取排序
-     * @return int
      */
     public function getSort(): int
     {
@@ -184,11 +137,42 @@ class SettingEntity
 
     /**
      * 设置排序
-     * @param int $value
      */
     public function setSort(int $value): void
     {
         $this->sort = $value;
+    }
+
+    /**
+     * 获取配置类型：text、select、file、hidden等
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * 设置配置类型：text、select、file、hidden等
+     */
+    public function setType(string $value): void
+    {
+        $this->type = $value;
+    }
+
+    /**
+     * 获取该项配置的值
+     */
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+
+    /**
+     * 设置该项配置的值
+     */
+    public function setValue(string $value): void
+    {
+        $this->value = $value;
     }
 
 }

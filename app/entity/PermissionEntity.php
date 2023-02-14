@@ -8,24 +8,14 @@ class PermissionEntity
 {
 
     /**
-     * @var int 
+     * @var \DateTime 
      */
-    public int $id;
+    public \DateTime $create_time;
 
     /**
-     * @var int 父级ID
+     * @var \DateTime 
      */
-    public int $parent_id;
-
-    /**
-     * @var string 规则名称
-     */
-    public string $name;
-
-    /**
-     * @var string 规则标识
-     */
-    public string $rule;
+    public \DateTime $delete_time;
 
     /**
      * @var string ICON图标
@@ -33,9 +23,29 @@ class PermissionEntity
     public string $icon;
 
     /**
+     * @var int 
+     */
+    public int $id;
+
+    /**
      * @var int 是否为管理菜单：1是,2否
      */
     public int $is_menu;
+
+    /**
+     * @var string 规则名称
+     */
+    public string $name;
+
+    /**
+     * @var int 父级ID
+     */
+    public int $parent_id;
+
+    /**
+     * @var string 规则标识
+     */
+    public string $rule;
 
     /**
      * @var int 排序
@@ -50,165 +60,10 @@ class PermissionEntity
     /**
      * @var \DateTime 
      */
-    public \DateTime $create_time;
-
-    /**
-     * @var \DateTime 
-     */
     public \DateTime $update_time;
 
     /**
-     * @var \DateTime 
-     */
-    public \DateTime $delete_time;
-
-    /**
      * 获取
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * 设置
-     * @param int $value
-     */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
-
-    /**
-     * 获取父级ID
-     * @return int
-     */
-    public function getParentId(): int
-    {
-        return $this->parent_id;
-    }
-
-    /**
-     * 设置父级ID
-     * @param int $value
-     */
-    public function setParentId(int $value): void
-    {
-        $this->parent_id = $value;
-    }
-
-    /**
-     * 获取规则名称
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * 设置规则名称
-     * @param string $value
-     */
-    public function setName(string $value): void
-    {
-        $this->name = $value;
-    }
-
-    /**
-     * 获取规则标识
-     * @return string
-     */
-    public function getRule(): string
-    {
-        return $this->rule;
-    }
-
-    /**
-     * 设置规则标识
-     * @param string $value
-     */
-    public function setRule(string $value): void
-    {
-        $this->rule = $value;
-    }
-
-    /**
-     * 获取ICON图标
-     * @return string
-     */
-    public function getIcon(): string
-    {
-        return $this->icon;
-    }
-
-    /**
-     * 设置ICON图标
-     * @param string $value
-     */
-    public function setIcon(string $value): void
-    {
-        $this->icon = $value;
-    }
-
-    /**
-     * 获取是否为管理菜单：1是,2否
-     * @return int
-     */
-    public function getIsMenu(): int
-    {
-        return $this->is_menu;
-    }
-
-    /**
-     * 设置是否为管理菜单：1是,2否
-     * @param int $value
-     */
-    public function setIsMenu(int $value): void
-    {
-        $this->is_menu = $value;
-    }
-
-    /**
-     * 获取排序
-     * @return int
-     */
-    public function getSort(): int
-    {
-        return $this->sort;
-    }
-
-    /**
-     * 设置排序
-     * @param int $value
-     */
-    public function setSort(int $value): void
-    {
-        $this->sort = $value;
-    }
-
-    /**
-     * 获取状态:1正常,2禁用
-     * @return int
-     */
-    public function getStatus(): int
-    {
-        return $this->status;
-    }
-
-    /**
-     * 设置状态:1正常,2禁用
-     * @param int $value
-     */
-    public function setStatus(int $value): void
-    {
-        $this->status = $value;
-    }
-
-    /**
-     * 获取
-     * @return \DateTime
      */
     public function getCreateTime(): \DateTime
     {
@@ -217,7 +72,6 @@ class PermissionEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setCreateTime(\DateTime $value): void
     {
@@ -226,25 +80,6 @@ class PermissionEntity
 
     /**
      * 获取
-     * @return \DateTime
-     */
-    public function getUpdateTime(): \DateTime
-    {
-        return $this->update_time;
-    }
-
-    /**
-     * 设置
-     * @param \DateTime $value
-     */
-    public function setUpdateTime(\DateTime $value): void
-    {
-        $this->update_time = $value;
-    }
-
-    /**
-     * 获取
-     * @return \DateTime
      */
     public function getDeleteTime(): \DateTime
     {
@@ -253,11 +88,154 @@ class PermissionEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setDeleteTime(\DateTime $value): void
     {
         $this->delete_time = $value;
+    }
+
+    /**
+     * 获取ICON图标
+     */
+    public function getIcon(): string
+    {
+        return $this->icon;
+    }
+
+    /**
+     * 设置ICON图标
+     */
+    public function setIcon(string $value): void
+    {
+        $this->icon = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * 设置
+     */
+    public function setId(int $value): void
+    {
+        $this->id = $value;
+    }
+
+    /**
+     * 获取是否为管理菜单：1是,2否
+     */
+    public function getIsMenu(): int
+    {
+        return $this->is_menu;
+    }
+
+    /**
+     * 设置是否为管理菜单：1是,2否
+     */
+    public function setIsMenu(int $value): void
+    {
+        $this->is_menu = $value;
+    }
+
+    /**
+     * 获取规则名称
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * 设置规则名称
+     */
+    public function setName(string $value): void
+    {
+        $this->name = $value;
+    }
+
+    /**
+     * 获取父级ID
+     */
+    public function getParentId(): int
+    {
+        return $this->parent_id;
+    }
+
+    /**
+     * 设置父级ID
+     */
+    public function setParentId(int $value): void
+    {
+        $this->parent_id = $value;
+    }
+
+    /**
+     * 获取规则标识
+     */
+    public function getRule(): string
+    {
+        return $this->rule;
+    }
+
+    /**
+     * 设置规则标识
+     */
+    public function setRule(string $value): void
+    {
+        $this->rule = $value;
+    }
+
+    /**
+     * 获取排序
+     */
+    public function getSort(): int
+    {
+        return $this->sort;
+    }
+
+    /**
+     * 设置排序
+     */
+    public function setSort(int $value): void
+    {
+        $this->sort = $value;
+    }
+
+    /**
+     * 获取状态:1正常,2禁用
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * 设置状态:1正常,2禁用
+     */
+    public function setStatus(int $value): void
+    {
+        $this->status = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getUpdateTime(): \DateTime
+    {
+        return $this->update_time;
+    }
+
+    /**
+     * 设置
+     */
+    public function setUpdateTime(\DateTime $value): void
+    {
+        $this->update_time = $value;
     }
 
 }

@@ -71,7 +71,7 @@ class GeneratorCommand extends Command
             if (in_array($type, ['bigint', 'tinyint'])) {
                 $type = 'int';
             }
-            if (in_array($type, ['varchar', 'char', 'text', 'mediumtext', 'longtext'])) {
+            if (in_array($type, ['varchar', 'char', 'text', 'mediumtext', 'longtext', 'enum'])) {
                 $type = 'string';
             }
             if (in_array($type, ['decimal', 'float'])) {

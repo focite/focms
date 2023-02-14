@@ -8,16 +8,6 @@ class UserEntity
 {
 
     /**
-     * @var int 
-     */
-    public int $id;
-
-    /**
-     * @var string 昵称
-     */
-    public string $name;
-
-    /**
      * @var string 头像
      */
     public string $avatar;
@@ -28,9 +18,29 @@ class UserEntity
     public \DateTime $birthday;
 
     /**
-     * @var string 登录用户名
+     * @var \DateTime 
      */
-    public string $username;
+    public \DateTime $create_time;
+
+    /**
+     * @var \DateTime 
+     */
+    public \DateTime $delete_time;
+
+    /**
+     * @var int 
+     */
+    public int $id;
+
+    /**
+     * @var int 是否为管理员:1是,2否
+     */
+    public int $is_admin;
+
+    /**
+     * @var string 昵称
+     */
+    public string $name;
 
     /**
      * @var string 登录用户密码
@@ -53,11 +63,6 @@ class UserEntity
     public string $reset_token;
 
     /**
-     * @var int 是否为管理员:1是,2否
-     */
-    public int $is_admin;
-
-    /**
      * @var int 状态:1正常,2禁用
      */
     public int $status;
@@ -65,57 +70,15 @@ class UserEntity
     /**
      * @var \DateTime 
      */
-    public \DateTime $create_time;
-
-    /**
-     * @var \DateTime 
-     */
     public \DateTime $update_time;
 
     /**
-     * @var \DateTime 
+     * @var string 登录用户名
      */
-    public \DateTime $delete_time;
-
-    /**
-     * 获取
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * 设置
-     * @param int $value
-     */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
-
-    /**
-     * 获取昵称
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * 设置昵称
-     * @param string $value
-     */
-    public function setName(string $value): void
-    {
-        $this->name = $value;
-    }
+    public string $username;
 
     /**
      * 获取头像
-     * @return string
      */
     public function getAvatar(): string
     {
@@ -124,7 +87,6 @@ class UserEntity
 
     /**
      * 设置头像
-     * @param string $value
      */
     public function setAvatar(string $value): void
     {
@@ -133,7 +95,6 @@ class UserEntity
 
     /**
      * 获取生日
-     * @return \DateTime
      */
     public function getBirthday(): \DateTime
     {
@@ -142,7 +103,6 @@ class UserEntity
 
     /**
      * 设置生日
-     * @param \DateTime $value
      */
     public function setBirthday(\DateTime $value): void
     {
@@ -150,134 +110,7 @@ class UserEntity
     }
 
     /**
-     * 获取登录用户名
-     * @return string
-     */
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
-
-    /**
-     * 设置登录用户名
-     * @param string $value
-     */
-    public function setUsername(string $value): void
-    {
-        $this->username = $value;
-    }
-
-    /**
-     * 获取登录用户密码
-     * @return string
-     */
-    public function getPassword(): string
-    {
-        return $this->password;
-    }
-
-    /**
-     * 设置登录用户密码
-     * @param string $value
-     */
-    public function setPassword(string $value): void
-    {
-        $this->password = $value;
-    }
-
-    /**
-     * 获取用户密码盐值
-     * @return string
-     */
-    public function getPasswordSalt(): string
-    {
-        return $this->password_salt;
-    }
-
-    /**
-     * 设置用户密码盐值
-     * @param string $value
-     */
-    public function setPasswordSalt(string $value): void
-    {
-        $this->password_salt = $value;
-    }
-
-    /**
-     * 获取Remember Token
-     * @return string
-     */
-    public function getRememberToken(): string
-    {
-        return $this->remember_token;
-    }
-
-    /**
-     * 设置Remember Token
-     * @param string $value
-     */
-    public function setRememberToken(string $value): void
-    {
-        $this->remember_token = $value;
-    }
-
-    /**
-     * 获取密码重置token
-     * @return string
-     */
-    public function getResetToken(): string
-    {
-        return $this->reset_token;
-    }
-
-    /**
-     * 设置密码重置token
-     * @param string $value
-     */
-    public function setResetToken(string $value): void
-    {
-        $this->reset_token = $value;
-    }
-
-    /**
-     * 获取是否为管理员:1是,2否
-     * @return int
-     */
-    public function getIsAdmin(): int
-    {
-        return $this->is_admin;
-    }
-
-    /**
-     * 设置是否为管理员:1是,2否
-     * @param int $value
-     */
-    public function setIsAdmin(int $value): void
-    {
-        $this->is_admin = $value;
-    }
-
-    /**
-     * 获取状态:1正常,2禁用
-     * @return int
-     */
-    public function getStatus(): int
-    {
-        return $this->status;
-    }
-
-    /**
-     * 设置状态:1正常,2禁用
-     * @param int $value
-     */
-    public function setStatus(int $value): void
-    {
-        $this->status = $value;
-    }
-
-    /**
      * 获取
-     * @return \DateTime
      */
     public function getCreateTime(): \DateTime
     {
@@ -286,7 +119,6 @@ class UserEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setCreateTime(\DateTime $value): void
     {
@@ -295,25 +127,6 @@ class UserEntity
 
     /**
      * 获取
-     * @return \DateTime
-     */
-    public function getUpdateTime(): \DateTime
-    {
-        return $this->update_time;
-    }
-
-    /**
-     * 设置
-     * @param \DateTime $value
-     */
-    public function setUpdateTime(\DateTime $value): void
-    {
-        $this->update_time = $value;
-    }
-
-    /**
-     * 获取
-     * @return \DateTime
      */
     public function getDeleteTime(): \DateTime
     {
@@ -322,11 +135,170 @@ class UserEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setDeleteTime(\DateTime $value): void
     {
         $this->delete_time = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * 设置
+     */
+    public function setId(int $value): void
+    {
+        $this->id = $value;
+    }
+
+    /**
+     * 获取是否为管理员:1是,2否
+     */
+    public function getIsAdmin(): int
+    {
+        return $this->is_admin;
+    }
+
+    /**
+     * 设置是否为管理员:1是,2否
+     */
+    public function setIsAdmin(int $value): void
+    {
+        $this->is_admin = $value;
+    }
+
+    /**
+     * 获取昵称
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * 设置昵称
+     */
+    public function setName(string $value): void
+    {
+        $this->name = $value;
+    }
+
+    /**
+     * 获取登录用户密码
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    /**
+     * 设置登录用户密码
+     */
+    public function setPassword(string $value): void
+    {
+        $this->password = $value;
+    }
+
+    /**
+     * 获取用户密码盐值
+     */
+    public function getPasswordSalt(): string
+    {
+        return $this->password_salt;
+    }
+
+    /**
+     * 设置用户密码盐值
+     */
+    public function setPasswordSalt(string $value): void
+    {
+        $this->password_salt = $value;
+    }
+
+    /**
+     * 获取Remember Token
+     */
+    public function getRememberToken(): string
+    {
+        return $this->remember_token;
+    }
+
+    /**
+     * 设置Remember Token
+     */
+    public function setRememberToken(string $value): void
+    {
+        $this->remember_token = $value;
+    }
+
+    /**
+     * 获取密码重置token
+     */
+    public function getResetToken(): string
+    {
+        return $this->reset_token;
+    }
+
+    /**
+     * 设置密码重置token
+     */
+    public function setResetToken(string $value): void
+    {
+        $this->reset_token = $value;
+    }
+
+    /**
+     * 获取状态:1正常,2禁用
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * 设置状态:1正常,2禁用
+     */
+    public function setStatus(int $value): void
+    {
+        $this->status = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getUpdateTime(): \DateTime
+    {
+        return $this->update_time;
+    }
+
+    /**
+     * 设置
+     */
+    public function setUpdateTime(\DateTime $value): void
+    {
+        $this->update_time = $value;
+    }
+
+    /**
+     * 获取登录用户名
+     */
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    /**
+     * 设置登录用户名
+     */
+    public function setUsername(string $value): void
+    {
+        $this->username = $value;
     }
 
 }

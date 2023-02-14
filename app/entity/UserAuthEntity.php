@@ -8,24 +8,9 @@ class UserAuthEntity
 {
 
     /**
-     * @var int 
+     * @var \DateTime 
      */
-    public int $id;
-
-    /**
-     * @var int 用户ID
-     */
-    public int $user_id;
-
-    /**
-     * @var string 凭证类型:mobile,email,wechat
-     */
-    public string $type;
-
-    /**
-     * @var string 唯一标识:如手机号码,电子邮箱,openid
-     */
-    public string $identifier;
+    public \DateTime $create_time;
 
     /**
      * @var string 凭证:密码或token
@@ -33,9 +18,19 @@ class UserAuthEntity
     public string $credential;
 
     /**
-     * @var \DateTime 验证时间
+     * @var \DateTime 
      */
-    public \DateTime $verified_time;
+    public \DateTime $delete_time;
+
+    /**
+     * @var int 
+     */
+    public int $id;
+
+    /**
+     * @var string 唯一标识:如手机号码,电子邮箱,openid
+     */
+    public string $identifier;
 
     /**
      * @var int 状态:1正常,2禁用
@@ -43,9 +38,9 @@ class UserAuthEntity
     public int $status;
 
     /**
-     * @var \DateTime 
+     * @var string 凭证类型:mobile,email,wechat
      */
-    public \DateTime $create_time;
+    public string $type;
 
     /**
      * @var \DateTime 
@@ -53,139 +48,17 @@ class UserAuthEntity
     public \DateTime $update_time;
 
     /**
-     * @var \DateTime 
+     * @var int 用户ID
      */
-    public \DateTime $delete_time;
+    public int $user_id;
+
+    /**
+     * @var \DateTime 验证时间
+     */
+    public \DateTime $verified_time;
 
     /**
      * 获取
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * 设置
-     * @param int $value
-     */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
-
-    /**
-     * 获取用户ID
-     * @return int
-     */
-    public function getUserId(): int
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * 设置用户ID
-     * @param int $value
-     */
-    public function setUserId(int $value): void
-    {
-        $this->user_id = $value;
-    }
-
-    /**
-     * 获取凭证类型:mobile,email,wechat
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * 设置凭证类型:mobile,email,wechat
-     * @param string $value
-     */
-    public function setType(string $value): void
-    {
-        $this->type = $value;
-    }
-
-    /**
-     * 获取唯一标识:如手机号码,电子邮箱,openid
-     * @return string
-     */
-    public function getIdentifier(): string
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * 设置唯一标识:如手机号码,电子邮箱,openid
-     * @param string $value
-     */
-    public function setIdentifier(string $value): void
-    {
-        $this->identifier = $value;
-    }
-
-    /**
-     * 获取凭证:密码或token
-     * @return string
-     */
-    public function getCredential(): string
-    {
-        return $this->credential;
-    }
-
-    /**
-     * 设置凭证:密码或token
-     * @param string $value
-     */
-    public function setCredential(string $value): void
-    {
-        $this->credential = $value;
-    }
-
-    /**
-     * 获取验证时间
-     * @return \DateTime
-     */
-    public function getVerifiedTime(): \DateTime
-    {
-        return $this->verified_time;
-    }
-
-    /**
-     * 设置验证时间
-     * @param \DateTime $value
-     */
-    public function setVerifiedTime(\DateTime $value): void
-    {
-        $this->verified_time = $value;
-    }
-
-    /**
-     * 获取状态:1正常,2禁用
-     * @return int
-     */
-    public function getStatus(): int
-    {
-        return $this->status;
-    }
-
-    /**
-     * 设置状态:1正常,2禁用
-     * @param int $value
-     */
-    public function setStatus(int $value): void
-    {
-        $this->status = $value;
-    }
-
-    /**
-     * 获取
-     * @return \DateTime
      */
     public function getCreateTime(): \DateTime
     {
@@ -194,7 +67,6 @@ class UserAuthEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setCreateTime(\DateTime $value): void
     {
@@ -202,26 +74,23 @@ class UserAuthEntity
     }
 
     /**
-     * 获取
-     * @return \DateTime
+     * 获取凭证:密码或token
      */
-    public function getUpdateTime(): \DateTime
+    public function getCredential(): string
     {
-        return $this->update_time;
+        return $this->credential;
     }
 
     /**
-     * 设置
-     * @param \DateTime $value
+     * 设置凭证:密码或token
      */
-    public function setUpdateTime(\DateTime $value): void
+    public function setCredential(string $value): void
     {
-        $this->update_time = $value;
+        $this->credential = $value;
     }
 
     /**
      * 获取
-     * @return \DateTime
      */
     public function getDeleteTime(): \DateTime
     {
@@ -230,11 +99,122 @@ class UserAuthEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setDeleteTime(\DateTime $value): void
     {
         $this->delete_time = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * 设置
+     */
+    public function setId(int $value): void
+    {
+        $this->id = $value;
+    }
+
+    /**
+     * 获取唯一标识:如手机号码,电子邮箱,openid
+     */
+    public function getIdentifier(): string
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * 设置唯一标识:如手机号码,电子邮箱,openid
+     */
+    public function setIdentifier(string $value): void
+    {
+        $this->identifier = $value;
+    }
+
+    /**
+     * 获取状态:1正常,2禁用
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * 设置状态:1正常,2禁用
+     */
+    public function setStatus(int $value): void
+    {
+        $this->status = $value;
+    }
+
+    /**
+     * 获取凭证类型:mobile,email,wechat
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * 设置凭证类型:mobile,email,wechat
+     */
+    public function setType(string $value): void
+    {
+        $this->type = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getUpdateTime(): \DateTime
+    {
+        return $this->update_time;
+    }
+
+    /**
+     * 设置
+     */
+    public function setUpdateTime(\DateTime $value): void
+    {
+        $this->update_time = $value;
+    }
+
+    /**
+     * 获取用户ID
+     */
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * 设置用户ID
+     */
+    public function setUserId(int $value): void
+    {
+        $this->user_id = $value;
+    }
+
+    /**
+     * 获取验证时间
+     */
+    public function getVerifiedTime(): \DateTime
+    {
+        return $this->verified_time;
+    }
+
+    /**
+     * 设置验证时间
+     */
+    public function setVerifiedTime(\DateTime $value): void
+    {
+        $this->verified_time = $value;
     }
 
 }

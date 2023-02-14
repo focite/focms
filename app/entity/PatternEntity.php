@@ -8,39 +8,9 @@ class PatternEntity
 {
 
     /**
-     * @var int 
-     */
-    public int $id;
-
-    /**
-     * @var string 模型名称
-     */
-    public string $name;
-
-    /**
      * @var string 模型编码
      */
     public string $code;
-
-    /**
-     * @var string 模型描述
-     */
-    public string $intro;
-
-    /**
-     * @var string 模型附加字段
-     */
-    public string $fields;
-
-    /**
-     * @var int 系统模型:1是，2否
-     */
-    public int $system;
-
-    /**
-     * @var int 状态:1正常，2不正常
-     */
-    public int $status;
 
     /**
      * @var \DateTime 
@@ -50,52 +20,45 @@ class PatternEntity
     /**
      * @var \DateTime 
      */
-    public \DateTime $update_time;
+    public \DateTime $delete_time;
+
+    /**
+     * @var string 模型附加字段
+     */
+    public string $fields;
+
+    /**
+     * @var int 
+     */
+    public int $id;
+
+    /**
+     * @var string 模型描述
+     */
+    public string $intro;
+
+    /**
+     * @var string 模型名称
+     */
+    public string $name;
+
+    /**
+     * @var int 状态:1正常，2不正常
+     */
+    public int $status;
+
+    /**
+     * @var int 系统模型:1是，2否
+     */
+    public int $system;
 
     /**
      * @var \DateTime 
      */
-    public \DateTime $delete_time;
-
-    /**
-     * 获取
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * 设置
-     * @param int $value
-     */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
-
-    /**
-     * 获取模型名称
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * 设置模型名称
-     * @param string $value
-     */
-    public function setName(string $value): void
-    {
-        $this->name = $value;
-    }
+    public \DateTime $update_time;
 
     /**
      * 获取模型编码
-     * @return string
      */
     public function getCode(): string
     {
@@ -104,7 +67,6 @@ class PatternEntity
 
     /**
      * 设置模型编码
-     * @param string $value
      */
     public function setCode(string $value): void
     {
@@ -112,80 +74,7 @@ class PatternEntity
     }
 
     /**
-     * 获取模型描述
-     * @return string
-     */
-    public function getIntro(): string
-    {
-        return $this->intro;
-    }
-
-    /**
-     * 设置模型描述
-     * @param string $value
-     */
-    public function setIntro(string $value): void
-    {
-        $this->intro = $value;
-    }
-
-    /**
-     * 获取模型附加字段
-     * @return string
-     */
-    public function getFields(): string
-    {
-        return $this->fields;
-    }
-
-    /**
-     * 设置模型附加字段
-     * @param string $value
-     */
-    public function setFields(string $value): void
-    {
-        $this->fields = $value;
-    }
-
-    /**
-     * 获取系统模型:1是，2否
-     * @return int
-     */
-    public function getSystem(): int
-    {
-        return $this->system;
-    }
-
-    /**
-     * 设置系统模型:1是，2否
-     * @param int $value
-     */
-    public function setSystem(int $value): void
-    {
-        $this->system = $value;
-    }
-
-    /**
-     * 获取状态:1正常，2不正常
-     * @return int
-     */
-    public function getStatus(): int
-    {
-        return $this->status;
-    }
-
-    /**
-     * 设置状态:1正常，2不正常
-     * @param int $value
-     */
-    public function setStatus(int $value): void
-    {
-        $this->status = $value;
-    }
-
-    /**
      * 获取
-     * @return \DateTime
      */
     public function getCreateTime(): \DateTime
     {
@@ -194,7 +83,6 @@ class PatternEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setCreateTime(\DateTime $value): void
     {
@@ -203,25 +91,6 @@ class PatternEntity
 
     /**
      * 获取
-     * @return \DateTime
-     */
-    public function getUpdateTime(): \DateTime
-    {
-        return $this->update_time;
-    }
-
-    /**
-     * 设置
-     * @param \DateTime $value
-     */
-    public function setUpdateTime(\DateTime $value): void
-    {
-        $this->update_time = $value;
-    }
-
-    /**
-     * 获取
-     * @return \DateTime
      */
     public function getDeleteTime(): \DateTime
     {
@@ -230,11 +99,122 @@ class PatternEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setDeleteTime(\DateTime $value): void
     {
         $this->delete_time = $value;
+    }
+
+    /**
+     * 获取模型附加字段
+     */
+    public function getFields(): string
+    {
+        return $this->fields;
+    }
+
+    /**
+     * 设置模型附加字段
+     */
+    public function setFields(string $value): void
+    {
+        $this->fields = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * 设置
+     */
+    public function setId(int $value): void
+    {
+        $this->id = $value;
+    }
+
+    /**
+     * 获取模型描述
+     */
+    public function getIntro(): string
+    {
+        return $this->intro;
+    }
+
+    /**
+     * 设置模型描述
+     */
+    public function setIntro(string $value): void
+    {
+        $this->intro = $value;
+    }
+
+    /**
+     * 获取模型名称
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * 设置模型名称
+     */
+    public function setName(string $value): void
+    {
+        $this->name = $value;
+    }
+
+    /**
+     * 获取状态:1正常，2不正常
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * 设置状态:1正常，2不正常
+     */
+    public function setStatus(int $value): void
+    {
+        $this->status = $value;
+    }
+
+    /**
+     * 获取系统模型:1是，2否
+     */
+    public function getSystem(): int
+    {
+        return $this->system;
+    }
+
+    /**
+     * 设置系统模型:1是，2否
+     */
+    public function setSystem(int $value): void
+    {
+        $this->system = $value;
+    }
+
+    /**
+     * 获取
+     */
+    public function getUpdateTime(): \DateTime
+    {
+        return $this->update_time;
+    }
+
+    /**
+     * 设置
+     */
+    public function setUpdateTime(\DateTime $value): void
+    {
+        $this->update_time = $value;
     }
 
 }

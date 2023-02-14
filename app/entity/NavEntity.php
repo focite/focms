@@ -8,24 +8,9 @@ class NavEntity
 {
 
     /**
-     * @var int 
+     * @var \DateTime 
      */
-    public int $id;
-
-    /**
-     * @var int 父级ID
-     */
-    public int $parent_id;
-
-    /**
-     * @var enum 导航类型
-     */
-    public enum $type;
-
-    /**
-     * @var string 导航文字
-     */
-    public string $name;
+    public \DateTime $create_time;
 
     /**
      * @var string 导航描述
@@ -38,14 +23,24 @@ class NavEntity
     public string $icon;
 
     /**
+     * @var int 
+     */
+    public int $id;
+
+    /**
      * @var string 链接地址
      */
     public string $link;
 
     /**
-     * @var enum 打开方式
+     * @var string 导航文字
      */
-    public enum $target;
+    public string $name;
+
+    /**
+     * @var int 父级ID
+     */
+    public int $parent_id;
 
     /**
      * @var int 排序
@@ -58,9 +53,14 @@ class NavEntity
     public int $status;
 
     /**
-     * @var \DateTime 
+     * @var string 打开方式
      */
-    public \DateTime $create_time;
+    public string $target;
+
+    /**
+     * @var string 导航类型
+     */
+    public string $type;
 
     /**
      * @var \DateTime 
@@ -69,187 +69,6 @@ class NavEntity
 
     /**
      * 获取
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * 设置
-     * @param int $value
-     */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
-
-    /**
-     * 获取父级ID
-     * @return int
-     */
-    public function getParentId(): int
-    {
-        return $this->parent_id;
-    }
-
-    /**
-     * 设置父级ID
-     * @param int $value
-     */
-    public function setParentId(int $value): void
-    {
-        $this->parent_id = $value;
-    }
-
-    /**
-     * 获取导航类型
-     * @return enum
-     */
-    public function getType(): enum
-    {
-        return $this->type;
-    }
-
-    /**
-     * 设置导航类型
-     * @param enum $value
-     */
-    public function setType(enum $value): void
-    {
-        $this->type = $value;
-    }
-
-    /**
-     * 获取导航文字
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * 设置导航文字
-     * @param string $value
-     */
-    public function setName(string $value): void
-    {
-        $this->name = $value;
-    }
-
-    /**
-     * 获取导航描述
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * 设置导航描述
-     * @param string $value
-     */
-    public function setDescription(string $value): void
-    {
-        $this->description = $value;
-    }
-
-    /**
-     * 获取小图标
-     * @return string
-     */
-    public function getIcon(): string
-    {
-        return $this->icon;
-    }
-
-    /**
-     * 设置小图标
-     * @param string $value
-     */
-    public function setIcon(string $value): void
-    {
-        $this->icon = $value;
-    }
-
-    /**
-     * 获取链接地址
-     * @return string
-     */
-    public function getLink(): string
-    {
-        return $this->link;
-    }
-
-    /**
-     * 设置链接地址
-     * @param string $value
-     */
-    public function setLink(string $value): void
-    {
-        $this->link = $value;
-    }
-
-    /**
-     * 获取打开方式
-     * @return enum
-     */
-    public function getTarget(): enum
-    {
-        return $this->target;
-    }
-
-    /**
-     * 设置打开方式
-     * @param enum $value
-     */
-    public function setTarget(enum $value): void
-    {
-        $this->target = $value;
-    }
-
-    /**
-     * 获取排序
-     * @return int
-     */
-    public function getSort(): int
-    {
-        return $this->sort;
-    }
-
-    /**
-     * 设置排序
-     * @param int $value
-     */
-    public function setSort(int $value): void
-    {
-        $this->sort = $value;
-    }
-
-    /**
-     * 获取状态:1正常,2禁用
-     * @return int
-     */
-    public function getStatus(): int
-    {
-        return $this->status;
-    }
-
-    /**
-     * 设置状态:1正常,2禁用
-     * @param int $value
-     */
-    public function setStatus(int $value): void
-    {
-        $this->status = $value;
-    }
-
-    /**
-     * 获取
-     * @return \DateTime
      */
     public function getCreateTime(): \DateTime
     {
@@ -258,7 +77,6 @@ class NavEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setCreateTime(\DateTime $value): void
     {
@@ -266,8 +84,167 @@ class NavEntity
     }
 
     /**
+     * 获取导航描述
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * 设置导航描述
+     */
+    public function setDescription(string $value): void
+    {
+        $this->description = $value;
+    }
+
+    /**
+     * 获取小图标
+     */
+    public function getIcon(): string
+    {
+        return $this->icon;
+    }
+
+    /**
+     * 设置小图标
+     */
+    public function setIcon(string $value): void
+    {
+        $this->icon = $value;
+    }
+
+    /**
      * 获取
-     * @return \DateTime
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * 设置
+     */
+    public function setId(int $value): void
+    {
+        $this->id = $value;
+    }
+
+    /**
+     * 获取链接地址
+     */
+    public function getLink(): string
+    {
+        return $this->link;
+    }
+
+    /**
+     * 设置链接地址
+     */
+    public function setLink(string $value): void
+    {
+        $this->link = $value;
+    }
+
+    /**
+     * 获取导航文字
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * 设置导航文字
+     */
+    public function setName(string $value): void
+    {
+        $this->name = $value;
+    }
+
+    /**
+     * 获取父级ID
+     */
+    public function getParentId(): int
+    {
+        return $this->parent_id;
+    }
+
+    /**
+     * 设置父级ID
+     */
+    public function setParentId(int $value): void
+    {
+        $this->parent_id = $value;
+    }
+
+    /**
+     * 获取排序
+     */
+    public function getSort(): int
+    {
+        return $this->sort;
+    }
+
+    /**
+     * 设置排序
+     */
+    public function setSort(int $value): void
+    {
+        $this->sort = $value;
+    }
+
+    /**
+     * 获取状态:1正常,2禁用
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * 设置状态:1正常,2禁用
+     */
+    public function setStatus(int $value): void
+    {
+        $this->status = $value;
+    }
+
+    /**
+     * 获取打开方式
+     */
+    public function getTarget(): string
+    {
+        return $this->target;
+    }
+
+    /**
+     * 设置打开方式
+     */
+    public function setTarget(string $value): void
+    {
+        $this->target = $value;
+    }
+
+    /**
+     * 获取导航类型
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * 设置导航类型
+     */
+    public function setType(string $value): void
+    {
+        $this->type = $value;
+    }
+
+    /**
+     * 获取
      */
     public function getUpdateTime(): \DateTime
     {
@@ -276,7 +253,6 @@ class NavEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setUpdateTime(\DateTime $value): void
     {

@@ -8,29 +8,19 @@ class StatsEntity
 {
 
     /**
-     * @var int 
-     */
-    public int $id;
-
-    /**
      * @var \DateTime 请求日期
      */
     public \DateTime $access_time;
 
     /**
-     * @var int 请求次数
+     * @var string 请求url地址
      */
-    public int $visit_times;
+    public string $access_url;
 
     /**
-     * @var string IP地址
+     * @var string 地区
      */
-    public string $ip_address;
-
-    /**
-     * @var string 操作系统
-     */
-    public string $system;
+    public string $area;
 
     /**
      * @var string 浏览器
@@ -38,14 +28,24 @@ class StatsEntity
     public string $browser;
 
     /**
+     * @var \DateTime 
+     */
+    public \DateTime $create_time;
+
+    /**
+     * @var int 
+     */
+    public int $id;
+
+    /**
+     * @var string IP地址
+     */
+    public string $ip_address;
+
+    /**
      * @var string 语言
      */
     public string $language;
-
-    /**
-     * @var string 地区
-     */
-    public string $area;
 
     /**
      * @var string 来源域名
@@ -58,14 +58,9 @@ class StatsEntity
     public string $referer_path;
 
     /**
-     * @var string 请求url地址
+     * @var string 操作系统
      */
-    public string $access_url;
-
-    /**
-     * @var \DateTime 
-     */
-    public \DateTime $create_time;
+    public string $system;
 
     /**
      * @var \DateTime 
@@ -73,26 +68,12 @@ class StatsEntity
     public \DateTime $update_time;
 
     /**
-     * 获取
-     * @return int
+     * @var int 请求次数
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * 设置
-     * @param int $value
-     */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
+    public int $visit_times;
 
     /**
      * 获取请求日期
-     * @return \DateTime
      */
     public function getAccessTime(): \DateTime
     {
@@ -101,7 +82,6 @@ class StatsEntity
 
     /**
      * 设置请求日期
-     * @param \DateTime $value
      */
     public function setAccessTime(\DateTime $value): void
     {
@@ -109,152 +89,7 @@ class StatsEntity
     }
 
     /**
-     * 获取请求次数
-     * @return int
-     */
-    public function getVisitTimes(): int
-    {
-        return $this->visit_times;
-    }
-
-    /**
-     * 设置请求次数
-     * @param int $value
-     */
-    public function setVisitTimes(int $value): void
-    {
-        $this->visit_times = $value;
-    }
-
-    /**
-     * 获取IP地址
-     * @return string
-     */
-    public function getIpAddress(): string
-    {
-        return $this->ip_address;
-    }
-
-    /**
-     * 设置IP地址
-     * @param string $value
-     */
-    public function setIpAddress(string $value): void
-    {
-        $this->ip_address = $value;
-    }
-
-    /**
-     * 获取操作系统
-     * @return string
-     */
-    public function getSystem(): string
-    {
-        return $this->system;
-    }
-
-    /**
-     * 设置操作系统
-     * @param string $value
-     */
-    public function setSystem(string $value): void
-    {
-        $this->system = $value;
-    }
-
-    /**
-     * 获取浏览器
-     * @return string
-     */
-    public function getBrowser(): string
-    {
-        return $this->browser;
-    }
-
-    /**
-     * 设置浏览器
-     * @param string $value
-     */
-    public function setBrowser(string $value): void
-    {
-        $this->browser = $value;
-    }
-
-    /**
-     * 获取语言
-     * @return string
-     */
-    public function getLanguage(): string
-    {
-        return $this->language;
-    }
-
-    /**
-     * 设置语言
-     * @param string $value
-     */
-    public function setLanguage(string $value): void
-    {
-        $this->language = $value;
-    }
-
-    /**
-     * 获取地区
-     * @return string
-     */
-    public function getArea(): string
-    {
-        return $this->area;
-    }
-
-    /**
-     * 设置地区
-     * @param string $value
-     */
-    public function setArea(string $value): void
-    {
-        $this->area = $value;
-    }
-
-    /**
-     * 获取来源域名
-     * @return string
-     */
-    public function getRefererDomain(): string
-    {
-        return $this->referer_domain;
-    }
-
-    /**
-     * 设置来源域名
-     * @param string $value
-     */
-    public function setRefererDomain(string $value): void
-    {
-        $this->referer_domain = $value;
-    }
-
-    /**
-     * 获取来源地址
-     * @return string
-     */
-    public function getRefererPath(): string
-    {
-        return $this->referer_path;
-    }
-
-    /**
-     * 设置来源地址
-     * @param string $value
-     */
-    public function setRefererPath(string $value): void
-    {
-        $this->referer_path = $value;
-    }
-
-    /**
      * 获取请求url地址
-     * @return string
      */
     public function getAccessUrl(): string
     {
@@ -263,7 +98,6 @@ class StatsEntity
 
     /**
      * 设置请求url地址
-     * @param string $value
      */
     public function setAccessUrl(string $value): void
     {
@@ -271,8 +105,39 @@ class StatsEntity
     }
 
     /**
+     * 获取地区
+     */
+    public function getArea(): string
+    {
+        return $this->area;
+    }
+
+    /**
+     * 设置地区
+     */
+    public function setArea(string $value): void
+    {
+        $this->area = $value;
+    }
+
+    /**
+     * 获取浏览器
+     */
+    public function getBrowser(): string
+    {
+        return $this->browser;
+    }
+
+    /**
+     * 设置浏览器
+     */
+    public function setBrowser(string $value): void
+    {
+        $this->browser = $value;
+    }
+
+    /**
      * 获取
-     * @return \DateTime
      */
     public function getCreateTime(): \DateTime
     {
@@ -281,7 +146,6 @@ class StatsEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setCreateTime(\DateTime $value): void
     {
@@ -290,7 +154,102 @@ class StatsEntity
 
     /**
      * 获取
-     * @return \DateTime
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * 设置
+     */
+    public function setId(int $value): void
+    {
+        $this->id = $value;
+    }
+
+    /**
+     * 获取IP地址
+     */
+    public function getIpAddress(): string
+    {
+        return $this->ip_address;
+    }
+
+    /**
+     * 设置IP地址
+     */
+    public function setIpAddress(string $value): void
+    {
+        $this->ip_address = $value;
+    }
+
+    /**
+     * 获取语言
+     */
+    public function getLanguage(): string
+    {
+        return $this->language;
+    }
+
+    /**
+     * 设置语言
+     */
+    public function setLanguage(string $value): void
+    {
+        $this->language = $value;
+    }
+
+    /**
+     * 获取来源域名
+     */
+    public function getRefererDomain(): string
+    {
+        return $this->referer_domain;
+    }
+
+    /**
+     * 设置来源域名
+     */
+    public function setRefererDomain(string $value): void
+    {
+        $this->referer_domain = $value;
+    }
+
+    /**
+     * 获取来源地址
+     */
+    public function getRefererPath(): string
+    {
+        return $this->referer_path;
+    }
+
+    /**
+     * 设置来源地址
+     */
+    public function setRefererPath(string $value): void
+    {
+        $this->referer_path = $value;
+    }
+
+    /**
+     * 获取操作系统
+     */
+    public function getSystem(): string
+    {
+        return $this->system;
+    }
+
+    /**
+     * 设置操作系统
+     */
+    public function setSystem(string $value): void
+    {
+        $this->system = $value;
+    }
+
+    /**
+     * 获取
      */
     public function getUpdateTime(): \DateTime
     {
@@ -299,11 +258,26 @@ class StatsEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setUpdateTime(\DateTime $value): void
     {
         $this->update_time = $value;
+    }
+
+    /**
+     * 获取请求次数
+     */
+    public function getVisitTimes(): int
+    {
+        return $this->visit_times;
+    }
+
+    /**
+     * 设置请求次数
+     */
+    public function setVisitTimes(int $value): void
+    {
+        $this->visit_times = $value;
     }
 
 }

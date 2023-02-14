@@ -8,29 +8,14 @@ class UserLogEntity
 {
 
     /**
+     * @var \DateTime 
+     */
+    public \DateTime $create_time;
+
+    /**
      * @var int 
      */
     public int $id;
-
-    /**
-     * @var int 用户ID
-     */
-    public int $user_id;
-
-    /**
-     * @var enum 日志级别
-     */
-    public enum $level;
-
-    /**
-     * @var string 日志内容
-     */
-    public string $message;
-
-    /**
-     * @var string User Agent
-     */
-    public string $user_agent;
 
     /**
      * @var string IP地址
@@ -38,9 +23,14 @@ class UserLogEntity
     public string $ip_address;
 
     /**
-     * @var \DateTime 
+     * @var string 日志级别
      */
-    public \DateTime $create_time;
+    public string $level;
+
+    /**
+     * @var string 日志内容
+     */
+    public string $message;
 
     /**
      * @var \DateTime 
@@ -48,116 +38,17 @@ class UserLogEntity
     public \DateTime $update_time;
 
     /**
-     * 获取
-     * @return int
+     * @var string User Agent
      */
-    public function getId(): int
-    {
-        return $this->id;
-    }
+    public string $user_agent;
 
     /**
-     * 设置
-     * @param int $value
+     * @var int 用户ID
      */
-    public function setId(int $value): void
-    {
-        $this->id = $value;
-    }
-
-    /**
-     * 获取用户ID
-     * @return int
-     */
-    public function getUserId(): int
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * 设置用户ID
-     * @param int $value
-     */
-    public function setUserId(int $value): void
-    {
-        $this->user_id = $value;
-    }
-
-    /**
-     * 获取日志级别
-     * @return enum
-     */
-    public function getLevel(): enum
-    {
-        return $this->level;
-    }
-
-    /**
-     * 设置日志级别
-     * @param enum $value
-     */
-    public function setLevel(enum $value): void
-    {
-        $this->level = $value;
-    }
-
-    /**
-     * 获取日志内容
-     * @return string
-     */
-    public function getMessage(): string
-    {
-        return $this->message;
-    }
-
-    /**
-     * 设置日志内容
-     * @param string $value
-     */
-    public function setMessage(string $value): void
-    {
-        $this->message = $value;
-    }
-
-    /**
-     * 获取User Agent
-     * @return string
-     */
-    public function getUserAgent(): string
-    {
-        return $this->user_agent;
-    }
-
-    /**
-     * 设置User Agent
-     * @param string $value
-     */
-    public function setUserAgent(string $value): void
-    {
-        $this->user_agent = $value;
-    }
-
-    /**
-     * 获取IP地址
-     * @return string
-     */
-    public function getIpAddress(): string
-    {
-        return $this->ip_address;
-    }
-
-    /**
-     * 设置IP地址
-     * @param string $value
-     */
-    public function setIpAddress(string $value): void
-    {
-        $this->ip_address = $value;
-    }
+    public int $user_id;
 
     /**
      * 获取
-     * @return \DateTime
      */
     public function getCreateTime(): \DateTime
     {
@@ -166,7 +57,6 @@ class UserLogEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setCreateTime(\DateTime $value): void
     {
@@ -175,7 +65,70 @@ class UserLogEntity
 
     /**
      * 获取
-     * @return \DateTime
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * 设置
+     */
+    public function setId(int $value): void
+    {
+        $this->id = $value;
+    }
+
+    /**
+     * 获取IP地址
+     */
+    public function getIpAddress(): string
+    {
+        return $this->ip_address;
+    }
+
+    /**
+     * 设置IP地址
+     */
+    public function setIpAddress(string $value): void
+    {
+        $this->ip_address = $value;
+    }
+
+    /**
+     * 获取日志级别
+     */
+    public function getLevel(): string
+    {
+        return $this->level;
+    }
+
+    /**
+     * 设置日志级别
+     */
+    public function setLevel(string $value): void
+    {
+        $this->level = $value;
+    }
+
+    /**
+     * 获取日志内容
+     */
+    public function getMessage(): string
+    {
+        return $this->message;
+    }
+
+    /**
+     * 设置日志内容
+     */
+    public function setMessage(string $value): void
+    {
+        $this->message = $value;
+    }
+
+    /**
+     * 获取
      */
     public function getUpdateTime(): \DateTime
     {
@@ -184,11 +137,42 @@ class UserLogEntity
 
     /**
      * 设置
-     * @param \DateTime $value
      */
     public function setUpdateTime(\DateTime $value): void
     {
         $this->update_time = $value;
+    }
+
+    /**
+     * 获取User Agent
+     */
+    public function getUserAgent(): string
+    {
+        return $this->user_agent;
+    }
+
+    /**
+     * 设置User Agent
+     */
+    public function setUserAgent(string $value): void
+    {
+        $this->user_agent = $value;
+    }
+
+    /**
+     * 获取用户ID
+     */
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * 设置用户ID
+     */
+    public function setUserId(int $value): void
+    {
+        $this->user_id = $value;
     }
 
 }
