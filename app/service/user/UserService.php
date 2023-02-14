@@ -28,6 +28,7 @@ class UserService
         $userModel = new UserModel();
         $userModel->setId($user->id);
         $userModel->setUsername($user->username);
+        $userModel->setPassword($user->password);
         $userModel->setPasswordSalt($user->password_salt);
 
         return $userModel;

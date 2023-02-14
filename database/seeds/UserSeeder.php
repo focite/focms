@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
         $userEntity->setAvatar('url');
         $userEntity->setBirthday(Carbon::now()->toDateString());
         $userEntity->setUsername('admin');
-        $userEntity->setPassword(Str::password('admin123'));
+        $userEntity->setPassword(Str::password('0192023a7bbd73250516f069df18b500')); // admin123
         $userEntity->setPasswordSalt('');
         $userEntity->setIsAdmin(1);
 
