@@ -6,10 +6,7 @@ namespace app\service\auth;
 
 use app\service\user\UserService;
 use app\service\wechat\WechatService;
-use EasyWeChat\Kernel\Exceptions\InvalidArgumentException;
 use EasyWeChat\OfficialAccount\Application;
-use GuzzleHttp\Exception\GuzzleException;
-use Overtrue\Socialite\Exceptions\AuthorizeFailedException;
 use think\Request;
 use think\response\Json;
 use think\response\Redirect;
@@ -31,10 +28,6 @@ class AuthService
      */
     private Application $wechat;
 
-    /**
-     * __construct
-     * @throws InvalidArgumentException
-     */
     public function __construct()
     {
         $this->userService = new UserService();
@@ -44,9 +37,6 @@ class AuthService
 
     /**
      * 生成授权链接
-     *
-     * @param  Request  $request
-     * @return Redirect
      */
     public function redirect(Request $request): Redirect
     {
@@ -61,12 +51,6 @@ class AuthService
 
     /**
      * 授权回调
-     *
-     * @param  Request  $request
-     * @return Json
-     *
-     * @throws GuzzleException
-     * @throws AuthorizeFailedException
      */
     public function callback(Request $request): Json
     {
