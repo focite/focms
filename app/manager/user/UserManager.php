@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace app\manager\user;
 
-use app\entity\User;
-use app\model\UserModel;
+use app\model\User;
+use app\service\user\model\UserModel;
 
 class UserManager
 {
