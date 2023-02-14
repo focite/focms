@@ -12,9 +12,10 @@ class CreateContentTypeTable extends Migrator
      */
     public function up()
     {
-        // TODO form,segment
+        // ['page', 'category', 'content', 'form', 'segment']
         $table = $this->table('pattern', ['engine' => 'InnoDB', 'collation' => 'utf8mb4_general_ci', 'comment' => '内容模型表']);
-        $table->addColumn(Column::string('name')->setUnique()->setComment('模型名称'))
+        $table->addColumn(Column::string('name')->setComment('模型名称'))
+            ->addColumn(Column::string('code')->setUnique()->setComment('模型编码'))
             ->addColumn(Column::string('intro')->setDefault('')->setComment('模型描述'))
             ->addColumn(Column::text('fields')->setComment('模型附加字段'))
             ->addColumn(Column::unsignedInteger('system')->setDefault(2)->setComment('系统模型:1是，2否'))
