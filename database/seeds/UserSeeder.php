@@ -1,5 +1,6 @@
 <?php
 
+use app\entity\UserAuthEntity;
 use app\entity\UserEntity;
 use app\support\Carbon;
 use app\support\Str;
@@ -10,18 +11,31 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        $userEntity = new UserEntity();
-        $userEntity->setName('李四');
-        $userEntity->setAvatar('url');
-        $userEntity->setBirthday(Carbon::now()->toDateString());
-        $userEntity->setUsername('admin');
-        $userEntity->setPassword(Str::password('0192023a7bbd73250516f069df18b500')); // admin123
-        $userEntity->setPasswordSalt('');
-        $userEntity->setIsAdmin(1);
-
-        $result = Db::name('user')->count();
+        $result = null;
+        Db::name('user')->count();
         if (empty($result)) {
-            Db::name('user')->insert(collect($userEntity)->toArray());
+            $userEntity = new UserEntity();
+            $userEntity->setName('李四');
+            $userEntity->setAvatar('url');
+            $userEntity->setBirthday(Carbon::now()->toDateString());
+            $userEntity->setUsername('admin123');
+            $userEntity->setPassword(Str::password('0192023a7bbd73250516f069df18b500')); // admin123
+            $userEntity->setPasswordSalt('');
+            $userEntity->setIsAdmin(1);
+            $userId = Db::name('user')->insert(collect($userEntity)->toArray(), true);
+
+            $userAuthEntity = new UserAuthEntity();
+            $userAuthEntity->setUserId($userId);
+            $userAuthEntity->setType('mobile');
+            $userAuthEntity->setIdentifier('18888888888');
+            $userAuthEntity->setCredential('');
+            $userAuthEntity->setStatus(1);
+            Db::name('user_auth')->insert(collect($userAuthEntity)->toArray());
+
+            $userAuthEntity2 = clone $userAuthEntity;
+            $userAuthEntity2->setType('email');
+            $userAuthEntity2->setIdentifier('aa@bb.com');
+            Db::name('user_auth')->insert(collect($userAuthEntity2)->toArray());
         }
     }
 }
