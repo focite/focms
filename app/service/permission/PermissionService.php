@@ -2,25 +2,21 @@
 
 declare(strict_types=1);
 
-namespace app\service\user;
+namespace app\service\permission;
 
-use app\model\AuthRule;
+use app\model\Permission;
 
-class RuleService
+class PermissionService
 {
     /**
      * 获取管理资源链接
-     *
-     * @param  int  $menu 是否仅显示菜单
-     * @param  int  $status 显示状态
-     * @return array
      */
-    public function getRule(int $menu = 1, int $status = 1): array
+    public function menuList(int $menu = 1, int $status = 1): array
     {
-        $collection = AuthRule::where('status', $status)
+        $collection = Permission::where('status', $status)
             ->where('is_menu', $menu)
-            ->orderBy('sort', 'asc')
-            ->orderBy('id', 'asc')
+            ->order('sort', 'asc')
+            ->order('id', 'asc')
             ->get();
 
         $data = collect($collection)->toArray();

@@ -6,8 +6,8 @@ namespace app\service\auth;
 
 use app\entity\Log;
 use app\manager\user\UserManager;
-use app\model\UserModel;
 use app\service\auth\input\LoginInput;
+use app\service\user\model\UserModel;
 use Exception;
 
 class LoginService

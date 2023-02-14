@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace app\service\auth;
 
 use app\service\user\UserService;
@@ -12,7 +14,7 @@ use think\Request;
 use think\response\Json;
 use think\response\Redirect;
 
-class OAuthService
+class AuthService
 {
     /**
      * @var UserService

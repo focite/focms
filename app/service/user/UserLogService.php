@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace app\service\user;
 
-use app\model\Log;
-
-class LogService
+class UserLogService
 {
     /**
      * @var Log
