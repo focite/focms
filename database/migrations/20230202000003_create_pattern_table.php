@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-class CreateContentTypeTable extends Migrator
+class CreatePatternTable extends Migrator
 {
     /**
      * Run the migrations.
