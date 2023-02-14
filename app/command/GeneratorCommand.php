@@ -80,7 +80,7 @@ class GeneratorCommand extends Command
             if (in_array($type, ['decimal', 'float'])) {
                 $type = 'float';
             }
-            if (in_array($type, ['datetime', 'date'])) {
+            if (in_array($type, ['datetime', 'date', 'timestamp'])) {
                 $type = '\DateTime';
             }
             $comment = $column['COLUMN_COMMENT'];
@@ -162,21 +162,14 @@ class {$model} extends Model
      *
      * @var string
      */
-    protected \$table = '{$table}';
+    protected \$name = '{$table}';
 
     /**
      * The primary key associated with the table.
      *
      * @var string
      */
-    protected \$primaryKey = 'id';
-
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public \$timestamps = false;
+    protected \$pk = 'id';
 }
 EOF;
 
