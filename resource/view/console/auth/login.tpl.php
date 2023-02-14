@@ -3,7 +3,7 @@
 <form class="layui-form" action="javascript:void(0);">
     <div class="layui-form-item">
         <img class="logo" src="{:asset('static/admin/images/logo.png')}"/>
-        <div class="title">PHPCMS Admin</div>
+        <div class="title">CMS Admin</div>
         <div class="desc">
             企业级门户网站管理系统
         </div>
