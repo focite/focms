@@ -8,9 +8,9 @@ class StatsEntity
 {
 
     /**
-     * @var \DateTime 请求日期
+     * @var string 请求日期
      */
-    public \DateTime $access_time;
+    public string $access_time;
 
     /**
      * @var string 请求url地址
@@ -28,9 +28,9 @@ class StatsEntity
     public string $browser;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $create_time;
+    public string $create_time;
 
     /**
      * @var int 
@@ -63,9 +63,9 @@ class StatsEntity
     public string $system;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $update_time;
+    public string $update_time;
 
     /**
      * @var int 请求次数
@@ -75,7 +75,7 @@ class StatsEntity
     /**
      * 获取请求日期
      */
-    public function getAccessTime(): \DateTime
+    public function getAccessTime(): string
     {
         return $this->access_time;
     }
@@ -83,7 +83,7 @@ class StatsEntity
     /**
      * 设置请求日期
      */
-    public function setAccessTime(\DateTime $value): void
+    public function setAccessTime(string $value): void
     {
         $this->access_time = $value;
     }
@@ -139,7 +139,7 @@ class StatsEntity
     /**
      * 获取
      */
-    public function getCreateTime(): \DateTime
+    public function getCreateTime(): string
     {
         return $this->create_time;
     }
@@ -147,7 +147,7 @@ class StatsEntity
     /**
      * 设置
      */
-    public function setCreateTime(\DateTime $value): void
+    public function setCreateTime(string $value): void
     {
         $this->create_time = $value;
     }
@@ -251,7 +251,7 @@ class StatsEntity
     /**
      * 获取
      */
-    public function getUpdateTime(): \DateTime
+    public function getUpdateTime(): string
     {
         return $this->update_time;
     }
@@ -259,7 +259,7 @@ class StatsEntity
     /**
      * 设置
      */
-    public function setUpdateTime(\DateTime $value): void
+    public function setUpdateTime(string $value): void
     {
         $this->update_time = $value;
     }

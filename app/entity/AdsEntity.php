@@ -18,14 +18,14 @@ class AdsEntity
     public string $code;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $create_time;
+    public string $create_time;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $delete_time;
+    public string $delete_time;
 
     /**
      * @var string 描述
@@ -33,9 +33,9 @@ class AdsEntity
     public string $description;
 
     /**
-     * @var \DateTime 结束时间
+     * @var string 结束时间
      */
-    public \DateTime $end_time;
+    public string $end_time;
 
     /**
      * @var int 广告高度
@@ -68,9 +68,9 @@ class AdsEntity
     public int $sort;
 
     /**
-     * @var \DateTime 开始时间
+     * @var string 开始时间
      */
-    public \DateTime $start_time;
+    public string $start_time;
 
     /**
      * @var int 状态:1正常,2禁用
@@ -78,9 +78,9 @@ class AdsEntity
     public int $status;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $update_time;
+    public string $update_time;
 
     /**
      * @var int 广告宽度
@@ -122,7 +122,7 @@ class AdsEntity
     /**
      * 获取
      */
-    public function getCreateTime(): \DateTime
+    public function getCreateTime(): string
     {
         return $this->create_time;
     }
@@ -130,7 +130,7 @@ class AdsEntity
     /**
      * 设置
      */
-    public function setCreateTime(\DateTime $value): void
+    public function setCreateTime(string $value): void
     {
         $this->create_time = $value;
     }
@@ -138,7 +138,7 @@ class AdsEntity
     /**
      * 获取
      */
-    public function getDeleteTime(): \DateTime
+    public function getDeleteTime(): string
     {
         return $this->delete_time;
     }
@@ -146,7 +146,7 @@ class AdsEntity
     /**
      * 设置
      */
-    public function setDeleteTime(\DateTime $value): void
+    public function setDeleteTime(string $value): void
     {
         $this->delete_time = $value;
     }
@@ -170,7 +170,7 @@ class AdsEntity
     /**
      * 获取结束时间
      */
-    public function getEndTime(): \DateTime
+    public function getEndTime(): string
     {
         return $this->end_time;
     }
@@ -178,7 +178,7 @@ class AdsEntity
     /**
      * 设置结束时间
      */
-    public function setEndTime(\DateTime $value): void
+    public function setEndTime(string $value): void
     {
         $this->end_time = $value;
     }
@@ -282,7 +282,7 @@ class AdsEntity
     /**
      * 获取开始时间
      */
-    public function getStartTime(): \DateTime
+    public function getStartTime(): string
     {
         return $this->start_time;
     }
@@ -290,7 +290,7 @@ class AdsEntity
     /**
      * 设置开始时间
      */
-    public function setStartTime(\DateTime $value): void
+    public function setStartTime(string $value): void
     {
         $this->start_time = $value;
     }
@@ -314,7 +314,7 @@ class AdsEntity
     /**
      * 获取
      */
-    public function getUpdateTime(): \DateTime
+    public function getUpdateTime(): string
     {
         return $this->update_time;
     }
@@ -322,7 +322,7 @@ class AdsEntity
     /**
      * 设置
      */
-    public function setUpdateTime(\DateTime $value): void
+    public function setUpdateTime(string $value): void
     {
         $this->update_time = $value;
     }

@@ -13,14 +13,14 @@ class PatternEntity
     public string $code;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $create_time;
+    public string $create_time;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $delete_time;
+    public string $delete_time;
 
     /**
      * @var string 模型附加字段
@@ -53,9 +53,9 @@ class PatternEntity
     public int $system;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $update_time;
+    public string $update_time;
 
     /**
      * 获取模型编码
@@ -76,7 +76,7 @@ class PatternEntity
     /**
      * 获取
      */
-    public function getCreateTime(): \DateTime
+    public function getCreateTime(): string
     {
         return $this->create_time;
     }
@@ -84,7 +84,7 @@ class PatternEntity
     /**
      * 设置
      */
-    public function setCreateTime(\DateTime $value): void
+    public function setCreateTime(string $value): void
     {
         $this->create_time = $value;
     }
@@ -92,7 +92,7 @@ class PatternEntity
     /**
      * 获取
      */
-    public function getDeleteTime(): \DateTime
+    public function getDeleteTime(): string
     {
         return $this->delete_time;
     }
@@ -100,7 +100,7 @@ class PatternEntity
     /**
      * 设置
      */
-    public function setDeleteTime(\DateTime $value): void
+    public function setDeleteTime(string $value): void
     {
         $this->delete_time = $value;
     }
@@ -204,7 +204,7 @@ class PatternEntity
     /**
      * 获取
      */
-    public function getUpdateTime(): \DateTime
+    public function getUpdateTime(): string
     {
         return $this->update_time;
     }
@@ -212,7 +212,7 @@ class PatternEntity
     /**
      * 设置
      */
-    public function setUpdateTime(\DateTime $value): void
+    public function setUpdateTime(string $value): void
     {
         $this->update_time = $value;
     }

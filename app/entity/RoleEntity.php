@@ -8,14 +8,14 @@ class RoleEntity
 {
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $create_time;
+    public string $create_time;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $delete_time;
+    public string $delete_time;
 
     /**
      * @var string 角色描述
@@ -43,14 +43,14 @@ class RoleEntity
     public int $status;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $update_time;
+    public string $update_time;
 
     /**
      * 获取
      */
-    public function getCreateTime(): \DateTime
+    public function getCreateTime(): string
     {
         return $this->create_time;
     }
@@ -58,7 +58,7 @@ class RoleEntity
     /**
      * 设置
      */
-    public function setCreateTime(\DateTime $value): void
+    public function setCreateTime(string $value): void
     {
         $this->create_time = $value;
     }
@@ -66,7 +66,7 @@ class RoleEntity
     /**
      * 获取
      */
-    public function getDeleteTime(): \DateTime
+    public function getDeleteTime(): string
     {
         return $this->delete_time;
     }
@@ -74,7 +74,7 @@ class RoleEntity
     /**
      * 设置
      */
-    public function setDeleteTime(\DateTime $value): void
+    public function setDeleteTime(string $value): void
     {
         $this->delete_time = $value;
     }
@@ -162,7 +162,7 @@ class RoleEntity
     /**
      * 获取
      */
-    public function getUpdateTime(): \DateTime
+    public function getUpdateTime(): string
     {
         return $this->update_time;
     }
@@ -170,7 +170,7 @@ class RoleEntity
     /**
      * 设置
      */
-    public function setUpdateTime(\DateTime $value): void
+    public function setUpdateTime(string $value): void
     {
         $this->update_time = $value;
     }

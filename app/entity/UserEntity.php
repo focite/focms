@@ -13,19 +13,19 @@ class UserEntity
     public string $avatar;
 
     /**
-     * @var \DateTime 生日
+     * @var string 生日
      */
-    public \DateTime $birthday;
+    public string $birthday;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $create_time;
+    public string $create_time;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $delete_time;
+    public string $delete_time;
 
     /**
      * @var int 
@@ -68,9 +68,9 @@ class UserEntity
     public int $status;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $update_time;
+    public string $update_time;
 
     /**
      * @var string 登录用户名
@@ -96,7 +96,7 @@ class UserEntity
     /**
      * 获取生日
      */
-    public function getBirthday(): \DateTime
+    public function getBirthday(): string
     {
         return $this->birthday;
     }
@@ -104,7 +104,7 @@ class UserEntity
     /**
      * 设置生日
      */
-    public function setBirthday(\DateTime $value): void
+    public function setBirthday(string $value): void
     {
         $this->birthday = $value;
     }
@@ -112,7 +112,7 @@ class UserEntity
     /**
      * 获取
      */
-    public function getCreateTime(): \DateTime
+    public function getCreateTime(): string
     {
         return $this->create_time;
     }
@@ -120,7 +120,7 @@ class UserEntity
     /**
      * 设置
      */
-    public function setCreateTime(\DateTime $value): void
+    public function setCreateTime(string $value): void
     {
         $this->create_time = $value;
     }
@@ -128,7 +128,7 @@ class UserEntity
     /**
      * 获取
      */
-    public function getDeleteTime(): \DateTime
+    public function getDeleteTime(): string
     {
         return $this->delete_time;
     }
@@ -136,7 +136,7 @@ class UserEntity
     /**
      * 设置
      */
-    public function setDeleteTime(\DateTime $value): void
+    public function setDeleteTime(string $value): void
     {
         $this->delete_time = $value;
     }
@@ -272,7 +272,7 @@ class UserEntity
     /**
      * 获取
      */
-    public function getUpdateTime(): \DateTime
+    public function getUpdateTime(): string
     {
         return $this->update_time;
     }
@@ -280,7 +280,7 @@ class UserEntity
     /**
      * 设置
      */
-    public function setUpdateTime(\DateTime $value): void
+    public function setUpdateTime(string $value): void
     {
         $this->update_time = $value;
     }

@@ -8,9 +8,9 @@ class UserAuthEntity
 {
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $create_time;
+    public string $create_time;
 
     /**
      * @var string 凭证:密码或token
@@ -18,9 +18,9 @@ class UserAuthEntity
     public string $credential;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $delete_time;
+    public string $delete_time;
 
     /**
      * @var int 
@@ -43,9 +43,9 @@ class UserAuthEntity
     public string $type;
 
     /**
-     * @var \DateTime 
+     * @var string 
      */
-    public \DateTime $update_time;
+    public string $update_time;
 
     /**
      * @var int 用户ID
@@ -53,14 +53,14 @@ class UserAuthEntity
     public int $user_id;
 
     /**
-     * @var \DateTime 验证时间
+     * @var string 验证时间
      */
-    public \DateTime $verified_time;
+    public string $verified_time;
 
     /**
      * 获取
      */
-    public function getCreateTime(): \DateTime
+    public function getCreateTime(): string
     {
         return $this->create_time;
     }
@@ -68,7 +68,7 @@ class UserAuthEntity
     /**
      * 设置
      */
-    public function setCreateTime(\DateTime $value): void
+    public function setCreateTime(string $value): void
     {
         $this->create_time = $value;
     }
@@ -92,7 +92,7 @@ class UserAuthEntity
     /**
      * 获取
      */
-    public function getDeleteTime(): \DateTime
+    public function getDeleteTime(): string
     {
         return $this->delete_time;
     }
@@ -100,7 +100,7 @@ class UserAuthEntity
     /**
      * 设置
      */
-    public function setDeleteTime(\DateTime $value): void
+    public function setDeleteTime(string $value): void
     {
         $this->delete_time = $value;
     }
@@ -172,7 +172,7 @@ class UserAuthEntity
     /**
      * 获取
      */
-    public function getUpdateTime(): \DateTime
+    public function getUpdateTime(): string
     {
         return $this->update_time;
     }
@@ -180,7 +180,7 @@ class UserAuthEntity
     /**
      * 设置
      */
-    public function setUpdateTime(\DateTime $value): void
+    public function setUpdateTime(string $value): void
     {
         $this->update_time = $value;
     }
@@ -204,7 +204,7 @@ class UserAuthEntity
     /**
      * 获取验证时间
      */
-    public function getVerifiedTime(): \DateTime
+    public function getVerifiedTime(): string
     {
         return $this->verified_time;
     }
@@ -212,7 +212,7 @@ class UserAuthEntity
     /**
      * 设置验证时间
      */
-    public function setVerifiedTime(\DateTime $value): void
+    public function setVerifiedTime(string $value): void
     {
         $this->verified_time = $value;
     }

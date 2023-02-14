@@ -78,7 +78,7 @@ class GeneratorCommand extends Command
                 $type = 'float';
             }
             if (in_array($type, ['datetime', 'date', 'timestamp'])) {
-                $type = '\DateTime';
+                $type = 'string';
             }
             $comment = $column['COLUMN_COMMENT'];
 
