@@ -17,6 +17,7 @@ class CreateContentTable extends Migrator
             ->addColumn(Column::unsignedInteger('in_station')->setDefault(1)->setComment('内容类型:1站内,2站外'))
             ->addColumn(Column::unsignedInteger('pattern_id')->setComment('模型ID'))
             ->addColumn(Column::string('pattern_code')->setComment('模型类型'))
+            ->addColumn(Column::string('slug')->setUnique()->setComment('URL PathInfo'))
             ->addColumn(Column::string('title')->setUnique()->setComment('标题'))
             ->addColumn(Column::string('keywords')->setDefault('')->setComment('关键词'))
             ->addColumn(Column::string('description')->setDefault('')->setComment('描述'))
