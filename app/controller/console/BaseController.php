@@ -11,9 +11,6 @@ use app\middleware\Privilege;
 
 abstract class BaseController extends Controller
 {
-    /**
-     * @var array
-     */
     protected array $middleware = [
         [Authenticate::class, [GlobalConst::CONSOLE_MODULE]],
         Privilege::class,

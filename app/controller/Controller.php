@@ -91,9 +91,7 @@ abstract class Controller
      */
     protected function json($data, array $headers = []): Json
     {
-        $clientId = request()->header($this->clientName, md5($this->createSessionId()));
-
-        return json($data, 200, array_merge($headers, [$this->clientName => $clientId]));
+        return json($data, 200, array_merge($headers, $this->getClientId()));
     }
 
     /**
@@ -118,6 +116,18 @@ abstract class Controller
             'message' => $message,
             'data' => null,
         ], $headers);
+    }
+
+    /**
+     * 返回请求客户端ID
+     *
+     * @return array
+     */
+    protected function getClientId(): array
+    {
+        $clientId = request()->header($this->clientName, md5($this->createSessionId()));
+
+        return [$this->clientName => $clientId];
     }
 
     /**

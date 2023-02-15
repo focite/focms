@@ -20,9 +20,6 @@ use think\response\View;
 
 class AuthController extends Controller
 {
-    /**
-     * @var array
-     */
     protected array $middleware = [
         [RedirectIfAuthenticated::class, [GlobalConst::CONSOLE_MODULE]],
     ];
