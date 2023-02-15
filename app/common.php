@@ -42,20 +42,7 @@ if (! function_exists('route')) {
      */
     function route(string $path = '', array $vars = []): string
     {
-        if (Str::substr($path, 0, 1) !== '/') {
-            $pathInfo = request()->pathinfo();
-            $pathList = array_pad(explode('/', $pathInfo), 3, 'index');
-
-            [$m, $c, $a] = array_pad(explode('/', $path), 3, null);
-            if (is_null($c)) {
-                $path = $pathList[0] . '/' . $pathList[1] . '/' . $m;
-            } elseif (is_null($a)) {
-                $path = $pathList[0] . '/' . $c . '/' . $m;
-            }
-            $path = '/' . $path;
-        }
-
-        return url($path, $vars);
+        return url('/' . $path, $vars);
     }
 }
 

@@ -14,10 +14,10 @@
 
 <div>
     {if condition="session('?auth_user')"}
-    <a href="{:route('/user')}">会员中心</a> |
-    <a href="{:route('/logout')}" onclick="event.preventDefault();
+    <a href="{:route('user')}">会员中心</a> |
+    <a href="{:route('user/index/logout')}" onclick="event.preventDefault();
        document.getElementById('logout-form').submit();">注销</a>
-    <form id="logout-form" action="{:route('logout')}" method="POST">
+    <form id="logout-form" action="{:route('user/index/logout')}" method="POST">
         {:token_field()}
     </form>
     {else}
