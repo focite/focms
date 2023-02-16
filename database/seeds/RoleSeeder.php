@@ -7,14 +7,15 @@ class RoleSeeder extends Seeder
 {
     public function run()
     {
-        $result = Db::name('role')->count();
-        if (empty($result)) {
-            Db::name('role')->insert([
-                'id' => 1,
-                'title' => '超级管理员',
-                'rules' => '1',
-                'status' => 1,
-            ]);
-        }
+        Db::transaction(function () {
+            $result = Db::name('role')->count();
+            if (empty($result)) {
+                Db::name('role')->insert([
+                    'id' => 1,
+                    'name' => '超级管理员',
+                    'description' => '',
+                ]);
+            }
+        });
     }
 }

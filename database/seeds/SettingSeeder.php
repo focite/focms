@@ -7,21 +7,23 @@ class SettingSeeder extends Seeder
 {
     public function run()
     {
-        $result = Db::name('setting')->count();
-        if (empty($result)) {
-            $this->setting();
-            $this->company();
-            $this->site();
-            $this->mail();
-            $this->sms();
-            $this->baidu();
-        }
+        Db::transaction(function () {
+            $result = Db::name('setting')->count();
+            if (empty($result)) {
+                $this->setting();
+                $this->company();
+                $this->site();
+                $this->mail();
+                $this->sms();
+                $this->baidu();
+            }
+        });
     }
 
     private function setting()
     {
         $id = Db::name('setting')->insert(['parent_id' => 0, 'code' => 'setting', 'type' => 'hidden'], true);
-        Db::name('setting')->insert([
+        Db::name('setting')->insertAll([
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'setting_item', 'type' => 'text'],
         ]);
     }
@@ -29,7 +31,7 @@ class SettingSeeder extends Seeder
     private function company()
     {
         $id = Db::name('setting')->insert(['parent_id' => 0, 'code' => 'company', 'type' => 'hidden'], true);
-        Db::name('setting')->insert([
+        Db::name('setting')->insertAll([
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'company_name', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'company_address', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'company_zip_code', 'type' => 'text'],
@@ -45,7 +47,7 @@ class SettingSeeder extends Seeder
     private function site()
     {
         $id = Db::name('setting')->insert(['parent_id' => 0, 'code' => 'site', 'type' => 'hidden'], true);
-        Db::name('setting')->insert([
+        Db::name('setting')->insertAll([
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'site_title', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'site_subhead', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'site_keywords', 'type' => 'text'],
@@ -61,7 +63,7 @@ class SettingSeeder extends Seeder
     private function mail()
     {
         $id = Db::name('setting')->insert(['parent_id' => 0, 'code' => 'mail', 'type' => 'hidden'], true);
-        Db::name('setting')->insert([
+        Db::name('setting')->insertAll([
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'mail_host', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'mail_port', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'mail_ssl', 'type' => 'text'],
@@ -74,7 +76,7 @@ class SettingSeeder extends Seeder
     private function sms()
     {
         $id = Db::name('setting')->insert(['parent_id' => 0, 'code' => 'sms', 'type' => 'hidden'], true);
-        Db::name('setting')->insert([
+        Db::name('setting')->insertAll([
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'sms_provider', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'sms_account', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'sms_password', 'type' => 'text'],
@@ -84,7 +86,7 @@ class SettingSeeder extends Seeder
     private function baidu()
     {
         $id = Db::name('setting')->insert(['parent_id' => 0, 'code' => 'baidu', 'type' => 'hidden'], true);
-        Db::name('setting')->insert([
+        Db::name('setting')->insertAll([
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'baidu_token', 'type' => 'text'],
             ['parent_id' => $id, 'name' => '配置项', 'code' => 'baidu_push_type', 'type' => 'select'],
         ]);
