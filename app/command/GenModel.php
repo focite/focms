@@ -10,7 +10,7 @@ use think\console\Output;
 use think\facade\Db;
 use think\helper\Str;
 
-class GeneratorCommand extends Command
+class GenModel extends Command
 {
     /**
      * 忽略表
@@ -29,7 +29,7 @@ class GeneratorCommand extends Command
     protected function configure()
     {
         // 指令配置
-        $this->setName('gen:dao')
+        $this->setName('gen:model')
             ->setDescription('the generate command');
     }
 
