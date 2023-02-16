@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\controller\console;
 
+use app\service\permission\PermissionService;
 use think\response\Json;
 use think\response\View;
 
@@ -22,9 +23,9 @@ class IndexController extends BaseController
      */
     public function menu(): Json
     {
-        $menu = '';
-
-        return $this->json(json_decode($menu, true));
+        $permissionService = new PermissionService();
+        $menu = $permissionService->getMenu();
+        return $this->json($menu);
     }
 
     /**
@@ -32,8 +33,7 @@ class IndexController extends BaseController
      */
     public function message(): Json
     {
-        $menu = file_get_contents(public_path('static/admin/data') . 'menu.json');
-        return $menu;
+        return $this->json(['message']);;
     }
 
     /**

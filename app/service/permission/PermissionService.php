@@ -11,13 +11,13 @@ class PermissionService
     /**
      * 获取管理资源链接
      */
-    public function menuList(int $menu = 1, int $status = 1): array
+    public function getMenu(): array
     {
-        $collection = Permission::where('status', $status)
-            ->where('is_menu', $menu)
+        $collection = Permission::where('status', 1)
+            ->where('is_menu', 1)
             ->order('sort', 'asc')
             ->order('id', 'asc')
-            ->get();
+            ->select();
 
         $data = collect($collection)->toArray();
 
@@ -28,20 +28,25 @@ class PermissionService
                     return $v['parent_id'] == $item['id'];
                 });
 
-                $sub = [];
+                $children = [];
                 foreach ($filtered->all() as $v) {
-                    $sub[] = [
-                        'name' => $v['name'],
-                        'url' => route('admin.'.$v['rule']),
+                    $children[] = [
+                        'id' => $v['id'],
+                        'title' => $v['name'],
+                        'href' => route('console/'.$v['rule']),
                         'icon' => $v['icon'],
+                        'type' => 1,
+                        'openType' => '_iframe',
                     ];
                 }
 
                 $menu[] = [
-                    'name' => $item['name'],
-                    'url' => 'javascript:void(0);',
+                    'id' => $item['id'],
+                    'title' => $item['name'],
+                    'href' => '',
                     'icon' => $item['icon'],
-                    'sub' => $sub,
+                    'type' => 0,
+                    'children' => $children,
                 ];
             }
         }

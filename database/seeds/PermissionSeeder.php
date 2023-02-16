@@ -11,11 +11,11 @@ class PermissionSeeder extends Seeder
             $result = Db::name('permission')->count();
             if (empty($result)) {
                 $menu = [
-                    ['id' => 1, 'name' => '全局设置', 'rule' => 'setting', 'icon' => 'icon-slider', 'is_menu' => 1],
-                    ['id' => 2, 'name' => '内容管理', 'rule' => 'content', 'icon' => 'icon-form', 'is_menu' => 1],
-                    ['id' => 3, 'name' => '其他模块', 'rule' => 'extension', 'icon' => 'layui-icon-set-fill', 'is_menu' => 1],
-                    ['id' => 4, 'name' => '系统管理', 'rule' => 'system', 'icon' => 'layui-icon-set-fill', 'is_menu' => 1],
-                    ['id' => 5, 'name' => '开发工具', 'rule' => 'develop', 'icon' => 'layui-icon-util', 'is_menu' => 1],
+                    ['id' => 1, 'name' => '全局设置', 'rule' => 'setting', 'icon' => 'layui-icon layui-icon-console', 'is_menu' => 1],
+                    ['id' => 2, 'name' => '内容管理', 'rule' => 'content', 'icon' => 'layui-icon layui-icon-form', 'is_menu' => 1],
+                    ['id' => 3, 'name' => '其他模块', 'rule' => 'extension', 'icon' => 'layui-icon layui-icon-app', 'is_menu' => 1],
+                    ['id' => 4, 'name' => '系统管理', 'rule' => 'system', 'icon' => 'layui-icon layui-icon-set', 'is_menu' => 1],
+                    ['id' => 5, 'name' => '开发工具', 'rule' => 'develop', 'icon' => 'layui-icon layui-icon-util', 'is_menu' => 1],
 
                     ['parent_id' => 1, 'name' => '基本参数', 'rule' => 'setting/basic', 'is_menu' => 1],
                     ['parent_id' => 1, 'name' => '公司信息', 'rule' => 'setting/company', 'is_menu' => 1],

@@ -62,12 +62,12 @@ class AuthController extends Controller
             $loginService = new LoginService();
             $userId = $loginService->login($loginInput);
 
+            $loginService->loginUsingId($userId, GlobalConst::CONSOLE_MODULE, $loginInput->isRememberMe());
+
             if ($request->isJson()) {
                 // TODO
                 return $this->success('jwt');
             } else {
-                $guard = GlobalConst::CONSOLE_MODULE;
-                $loginService->loginUsingId($userId, $guard, $loginInput->isRememberMe());
                 return $this->success('ok');
             }
         } catch (\Exception $e) {
