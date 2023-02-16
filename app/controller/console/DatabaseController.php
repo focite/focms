@@ -24,7 +24,7 @@ class DatabaseController extends BaseController
     /**
      * 数据库搜索
      */
-    public function queryHandle(QueryRequest $request): Json
+    public function queryHandle(Request $request): Json
     {
         return $this->success('query');
     }
@@ -32,7 +32,7 @@ class DatabaseController extends BaseController
     /**
      * 数据库备份
      */
-    public function backupHandle(BackupRequest $request): Json
+    public function backupHandle(Request $request): Json
     {
         return $this->success('');
     }
@@ -40,7 +40,7 @@ class DatabaseController extends BaseController
     /**
      * 数据库回滚
      */
-    public function rollbackHandle(RollbackRequest $request): Json
+    public function rollbackHandle(Request $request): Json
     {
         return $this->success('');
     }
@@ -48,7 +48,7 @@ class DatabaseController extends BaseController
     /**
      * 删除备份
      */
-    public function destroyHandle(DestroyRequest $request): Json
+    public function destroyHandle(Request $request): Json
     {
         return $this->success('');
     }

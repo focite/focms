@@ -15,7 +15,7 @@ class ProfileController extends BaseController
         return view('index');
     }
 
-    public function updateHandle(UpdateRequest $request): Json
+    public function updateHandle(Request $request): Json
     {
         return $this->success('');
     }

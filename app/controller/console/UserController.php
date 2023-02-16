@@ -24,7 +24,7 @@ class UserController extends BaseController
     /**
      * 模型搜索
      */
-    public function queryHandle(QueryRequest $request): Json
+    public function queryHandle(Request $request): Json
     {
         return $this->success('query');
     }
@@ -40,7 +40,7 @@ class UserController extends BaseController
     /**
      * 保存模型
      */
-    public function storeHandle(StoreRequest $request): Json
+    public function storeHandle(Request $request): Json
     {
         return $this->success('store');
     }
@@ -64,7 +64,7 @@ class UserController extends BaseController
     /**
      * 更新模型
      */
-    public function updateHandle(UpdateRequest $request): Json
+    public function updateHandle(Request $request): Json
     {
         return $this->success('update');
     }
@@ -72,7 +72,7 @@ class UserController extends BaseController
     /**
      * 删除用户
      */
-    public function destroyHandle(DestroyRequest $request): Json
+    public function destroyHandle(Request $request): Json
     {
         return $this->success('destroy');
     }

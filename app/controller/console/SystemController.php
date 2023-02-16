@@ -36,7 +36,7 @@ class SystemController extends BaseController
     /**
      * 在线更新
      */
-    public function upgradeHandle(UpgradeRequest $request): Json
+    public function upgradeHandle(Request $request): Json
     {
         return $this->success('');
     }

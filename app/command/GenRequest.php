@@ -64,8 +64,9 @@ class GenRequest extends Command
             file_put_contents($path . '/' . $request . '.php', $content);
 
             $import .= "use app\\request\\$module\\$requestNamespace\\$request;\n";
-            $patterns['/public function ' . $method . 'Handle\(.* \$request\)/'] = 'public function ' . $method . 'Handle(' . $request . ' $request)';
-            $patterns['/public function ' . $method . 'Handle\(\)/'] = 'public function ' . $method . 'Handle(' . $request . ' $request)';
+            $import .= "use think\\Request;\n";
+            $patterns['/public function ' . $method . 'Handle\(.* \$request\)/'] = 'public function ' . $method . 'Handle(Request $request)';
+            $patterns['/public function ' . $method . 'Handle\(\)/'] = 'public function ' . $method . 'Handle(Request $request)';
         }
 
         $usePattern["/use app\\\\request\\\\.*\n/"] = '';

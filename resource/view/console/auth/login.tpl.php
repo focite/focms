@@ -1,4 +1,4 @@
-{layout name="layout/auth" /}
+{layout name="console/layout/auth" /}
 
 <form class="layui-form" action="javascript:void(0);">
     <div class="layui-form-item">

@@ -40,7 +40,7 @@ class AuthController extends Controller
     /**
      * 登录操作
      */
-    public function loginHandle(LoginRequest $request): Json
+    public function loginHandle(Request $request): Json
     {
         try {
             validate(LoginRequest::class)->check($request->post());
@@ -74,7 +74,7 @@ class AuthController extends Controller
     /**
      * 注册操作
      */
-    public function registerHandle(RegisterRequest $request): Json
+    public function registerHandle(Request $request): Json
     {
         try {
             validate(RegisterRequest::class)->check($request->post());
@@ -96,7 +96,7 @@ class AuthController extends Controller
     /**
      * 忘记密码操作
      */
-    public function forgotHandle(ForgotRequest $request): Json
+    public function forgotHandle(Request $request): Json
     {
         try {
             validate(ForgetRequest::class)->check($request->post());
@@ -118,7 +118,7 @@ class AuthController extends Controller
     /**
      * 重置密码操作
      */
-    public function resetHandle(ResetRequest $request): Json
+    public function resetHandle(Request $request): Json
     {
         try {
             validate(ResetRequest::class)->check($request->post());
@@ -156,7 +156,7 @@ class AuthController extends Controller
     /**
      * 社会化登录绑定操作
      */
-    public function bindHandle(BindRequest $request): Json
+    public function bindHandle(Request $request): Json
     {
         return $this->success('data');
     }

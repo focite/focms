@@ -1,3 +1,3 @@
-{layout name="layout/auth" /}
+{layout name="console/layout/auth" /}
 
 reset page.

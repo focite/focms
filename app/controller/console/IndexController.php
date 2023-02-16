@@ -58,7 +58,7 @@ class IndexController extends BaseController
     /**
      * 更新个人资料
      */
-    public function profileHandle(ProfileRequest $request): Json
+    public function profileHandle(Request $request): Json
     {
         return $this->success('ok');
     }
@@ -74,7 +74,7 @@ class IndexController extends BaseController
     /**
      * 修改密码
      */
-    public function passwordHandle(PasswordRequest $request): Json
+    public function passwordHandle(Request $request): Json
     {
         return $this->success('password');
     }

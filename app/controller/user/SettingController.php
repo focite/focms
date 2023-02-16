@@ -21,7 +21,7 @@ class SettingController extends BaseController
     /**
      * 修改密码
      */
-    public function editPasswordHandle(EditPasswordRequest $request): Json
+    public function editPasswordHandle(Request $request): Json
     {
         return $this->success('data');
     }
