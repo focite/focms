@@ -17,7 +17,7 @@ class LoginService
      *
      * @throws Exception
      */
-    public function login(LoginInput $loginInput, string $guard): bool
+    public function login(LoginInput $loginInput): int
     {
         $userModel = $this->user($loginInput->getUsername());
         if (is_null($userModel)) {
@@ -30,19 +30,22 @@ class LoginService
             throw new Exception('用户登录密码不正确');
         }
 
-        // 校验状态
+        // 记录日志 TODO
 
-        // 记录日志
+        return $userModel->getId();
+    }
+
+    /**
+     * 使用用户ID登录
+     */
+    public function loginUsingId(int $userId, string $guard, bool $rememberMe): void
+    {
+        session('auth_' . $guard, $userId);
 
         // 记住登录
-        if ($loginInput->isRememberMe()) {
-            cookie($guard . '_remember', $userModel->getId(), 30 * 24 * 3600);
+        if ($rememberMe) {
+            cookie($guard . '_remember', $userId, 30 * 24 * 3600);
         }
-
-        // 保存session
-        session('auth_' . $guard, $userModel->getId());
-
-        return true;
     }
 
     /**
