@@ -29,7 +29,7 @@ class GenRequest extends Command
                 $methods = $this->getMethods($module, $file);
 
                 preg_match('/(\w+)Controller\.php/', $file, $matches);
-                $this->writeFile($module, $matches[1], $methods);
+                $this->writeFile(basename($module), $matches[1], $methods);
             }
         }
     }
@@ -50,7 +50,8 @@ class GenRequest extends Command
     private function writeFile($module, $controller, $methods): void
     {
         $requestPath = app_path('request/' . $module);
-        $path = $requestPath . '/' . $controller;
+        $requestNamespace = Str::camel($controller);
+        $path = $requestPath . $requestNamespace;
         if (!is_dir($path)) {
             mkdir($path, 0755, true);
         }
@@ -59,15 +60,15 @@ class GenRequest extends Command
         $patterns = [];
         foreach ($methods as $method) {
             $request = Str::studly($method) . 'Request';
-            $content = $this->requestTpl($module, $controller, $request);
+            $content = $this->requestTpl($module, $requestNamespace, $request);
             file_put_contents($path . '/' . $request . '.php', $content);
 
-            $import .= "use app\\request\\$module\\$controller\\$request;\n";
+            $import .= "use app\\request\\$module\\$requestNamespace\\$request;\n";
             $patterns['/public function ' . $method . 'Handle\(.* \$request\)/'] = 'public function ' . $method . 'Handle(' . $request . ' $request)';
             $patterns['/public function ' . $method . 'Handle\(\)/'] = 'public function ' . $method . 'Handle(' . $request . ' $request)';
         }
 
-        $usePattern["/use app\\\request\\\.*\n/"] = '';
+        $usePattern["/use app\\\\request\\\\.*\n/"] = '';
         $patterns["/class (.+?Controller)/"] = $import . "\n" . 'class \1';
 
         $controllerFile = app_path('controller/' . $module) . $controller . 'Controller.php';
