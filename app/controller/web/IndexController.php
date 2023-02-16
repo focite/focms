@@ -29,7 +29,7 @@ class IndexController extends BaseController
                 return view('/error');
             }
 
-            return view('/' . $data->template);
+            return view('/'.$data->template);
         } catch (Throwable $e) {
             return view('/error', [
                 'code' => $e->getCode(),

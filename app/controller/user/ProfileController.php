@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\controller\user;
 
+use app\request\user\profile\UpdateRequest;
 use think\response\Json;
 use think\response\View;
 
@@ -14,7 +15,7 @@ class ProfileController extends BaseController
         return view('index');
     }
 
-    public function updateHandle(): Json
+    public function updateHandle(UpdateRequest $request): Json
     {
         return $this->success('');
     }

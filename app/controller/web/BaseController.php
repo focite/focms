@@ -15,6 +15,6 @@ abstract class BaseController extends Controller
     protected function initialize()
     {
         $default = config('app.default_theme', 'default');
-        Config::set(['view_dir_name' => 'public/themes/' . $default . '/html'], 'view');
+        Config::set(['view_dir_name' => 'public/themes/'.$default.'/html'], 'view');
     }
 }

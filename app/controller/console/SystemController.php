@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace app\controller\console;
 
+use app\request\console\system\UpgradeRequest;
 use think\response\Json;
-use think\response\View;
 
 class SystemController extends BaseController
 {
@@ -36,7 +36,7 @@ class SystemController extends BaseController
     /**
      * 在线更新
      */
-    public function upgradeHandle(): Json
+    public function upgradeHandle(UpgradeRequest $request): Json
     {
         return $this->success('');
     }

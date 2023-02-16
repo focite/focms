@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace app\controller\console;
 
 use think\response\Json;
-use think\response\View;
 
 class SettingController extends BaseController
 {

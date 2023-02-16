@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\controller\user;
 
+use app\request\user\setting\EditPasswordRequest;
 use think\response\Json;
 use think\response\View;
 
@@ -20,7 +21,7 @@ class SettingController extends BaseController
     /**
      * 修改密码
      */
-    public function editPasswordHandle(): Json
+    public function editPasswordHandle(EditPasswordRequest $request): Json
     {
         return $this->success('data');
     }

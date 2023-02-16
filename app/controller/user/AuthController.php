@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace app\controller\user;
 
+use app\controller\web\BaseController as Controller;
 use app\enums\GlobalConst;
 use app\middleware\RedirectIfAuthenticated;
-use app\request\user\auth\ForgetRequest;
+use app\request\user\auth\BindRequest;
+use app\request\user\auth\ForgotRequest;
 use app\request\user\auth\LoginRequest;
 use app\request\user\auth\RegisterRequest;
 use app\request\user\auth\ResetRequest;
-use app\controller\web\BaseController as Controller;
 use app\service\auth\input\LoginInput;
 use app\service\auth\LoginService;
 use think\exception\ValidateException;
@@ -39,7 +40,7 @@ class AuthController extends Controller
     /**
      * 登录操作
      */
-    public function loginHandle(Request $request): Json
+    public function loginHandle(LoginRequest $request): Json
     {
         try {
             validate(LoginRequest::class)->check($request->post());
@@ -55,6 +56,7 @@ class AuthController extends Controller
         try {
             $loginService = new LoginService();
             $loginService->login($loginInput, GlobalConst::USER_MODULE);
+
             return $this->success('ok');
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
@@ -72,7 +74,7 @@ class AuthController extends Controller
     /**
      * 注册操作
      */
-    public function registerHandle(Request $request): Json
+    public function registerHandle(RegisterRequest $request): Json
     {
         try {
             validate(RegisterRequest::class)->check($request->post());
@@ -94,7 +96,7 @@ class AuthController extends Controller
     /**
      * 忘记密码操作
      */
-    public function forgotHandle(Request $request): Json
+    public function forgotHandle(ForgotRequest $request): Json
     {
         try {
             validate(ForgetRequest::class)->check($request->post());
@@ -116,7 +118,7 @@ class AuthController extends Controller
     /**
      * 重置密码操作
      */
-    public function resetHandle(Request $request): Json
+    public function resetHandle(ResetRequest $request): Json
     {
         try {
             validate(ResetRequest::class)->check($request->post());
@@ -154,7 +156,7 @@ class AuthController extends Controller
     /**
      * 社会化登录绑定操作
      */
-    public function bindHandle(Request $request): Json
+    public function bindHandle(BindRequest $request): Json
     {
         return $this->success('data');
     }

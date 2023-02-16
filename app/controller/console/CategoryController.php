@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace app\controller\console;
 
+use app\request\console\category\DestroyRequest;
+use app\request\console\category\QueryRequest;
+use app\request\console\category\StoreRequest;
+use app\request\console\category\UpdateRequest;
 use think\response\Json;
 use think\response\View;
 
@@ -20,7 +24,7 @@ class CategoryController extends BaseController
     /**
      * 栏目搜索
      */
-    public function queryHandle(): Json
+    public function queryHandle(QueryRequest $request): Json
     {
         return $this->success('query');
     }
@@ -36,7 +40,7 @@ class CategoryController extends BaseController
     /**
      * 保存栏目
      */
-    public function storeHandle(): Json
+    public function storeHandle(StoreRequest $request): Json
     {
         return $this->success('store');
     }
@@ -60,7 +64,7 @@ class CategoryController extends BaseController
     /**
      * 更新栏目
      */
-    public function updateHandle(): Json
+    public function updateHandle(UpdateRequest $request): Json
     {
         return $this->success('update');
     }
@@ -68,7 +72,7 @@ class CategoryController extends BaseController
     /**
      * 删除栏目
      */
-    public function destroyHandle(): Json
+    public function destroyHandle(DestroyRequest $request): Json
     {
         return $this->success('destroy');
     }

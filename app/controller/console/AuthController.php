@@ -7,7 +7,7 @@ namespace app\controller\console;
 use app\controller\Controller;
 use app\enums\GlobalConst;
 use app\middleware\RedirectIfAuthenticated;
-use app\request\console\auth\ForgetRequest;
+use app\request\console\auth\ForgotRequest;
 use app\request\console\auth\LoginRequest;
 use app\request\console\auth\ResetRequest;
 use app\service\auth\input\LoginInput;
@@ -37,7 +37,7 @@ class AuthController extends Controller
     /**
      * 登录操作
      */
-    public function loginHandle(Request $request): Json
+    public function loginHandle(LoginRequest $request): Json
     {
         try {
             validate(LoginRequest::class)->check($request->post());
@@ -78,7 +78,7 @@ class AuthController extends Controller
     /**
      * 忘记密码操作
      */
-    public function forgotHandle(Request $request): Json
+    public function forgotHandle(ForgotRequest $request): Json
     {
         try {
             validate(ForgetRequest::class)->check($request->post());
@@ -104,7 +104,7 @@ class AuthController extends Controller
     /**
      * 重设密码操作
      */
-    public function resetHandle(Request $request): Json
+    public function resetHandle(ResetRequest $request): Json
     {
         try {
             validate(ResetRequest::class)->check($request->post());

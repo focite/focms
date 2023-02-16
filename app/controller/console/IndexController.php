@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace app\controller\console;
 
+use app\request\console\index\PasswordRequest;
+use app\request\console\index\ProfileRequest;
 use app\service\permission\PermissionService;
 use think\response\Json;
 use think\response\View;
@@ -25,6 +27,7 @@ class IndexController extends BaseController
     {
         $permissionService = new PermissionService();
         $menu = $permissionService->getMenu();
+
         return $this->json($menu);
     }
 
@@ -33,7 +36,7 @@ class IndexController extends BaseController
      */
     public function message(): Json
     {
-        return $this->json(['message']);;
+        return $this->json(['message']);
     }
 
     /**
@@ -55,7 +58,7 @@ class IndexController extends BaseController
     /**
      * 更新个人资料
      */
-    public function profileHandle(): Json
+    public function profileHandle(ProfileRequest $request): Json
     {
         return $this->success('ok');
     }
@@ -71,7 +74,7 @@ class IndexController extends BaseController
     /**
      * 修改密码
      */
-    public function passwordHandle(): Json
+    public function passwordHandle(PasswordRequest $request): Json
     {
         return $this->success('password');
     }

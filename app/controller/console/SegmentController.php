@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace app\controller\console;
 
+use app\request\console\segment\DestroyRequest;
+use app\request\console\segment\QueryRequest;
+use app\request\console\segment\StoreRequest;
+use app\request\console\segment\UpdateRequest;
 use think\response\Json;
 use think\response\View;
 
@@ -20,7 +24,7 @@ class SegmentController extends BaseController
     /**
      * 标签搜索
      */
-    public function queryHandle(): Json
+    public function queryHandle(QueryRequest $request): Json
     {
         return $this->success('query');
     }
@@ -36,7 +40,7 @@ class SegmentController extends BaseController
     /**
      * 保存标签
      */
-    public function storeHandle(): Json
+    public function storeHandle(StoreRequest $request): Json
     {
         return $this->success('store');
     }
@@ -60,7 +64,7 @@ class SegmentController extends BaseController
     /**
      * 更新标签
      */
-    public function updateHandle(): Json
+    public function updateHandle(UpdateRequest $request): Json
     {
         return $this->success('update');
     }
@@ -68,7 +72,7 @@ class SegmentController extends BaseController
     /**
      * 删除标签
      */
-    public function destroyHandle(): Json
+    public function destroyHandle(DestroyRequest $request): Json
     {
         return $this->success('destroy');
     }

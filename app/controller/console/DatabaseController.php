@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace app\controller\console;
 
+use app\request\console\database\BackupRequest;
+use app\request\console\database\DestroyRequest;
+use app\request\console\database\QueryRequest;
+use app\request\console\database\RollbackRequest;
 use think\response\Json;
 use think\response\View;
 
@@ -20,7 +24,7 @@ class DatabaseController extends BaseController
     /**
      * 数据库搜索
      */
-    public function queryHandle(): Json
+    public function queryHandle(QueryRequest $request): Json
     {
         return $this->success('query');
     }
@@ -28,7 +32,7 @@ class DatabaseController extends BaseController
     /**
      * 数据库备份
      */
-    public function backupHandle(): Json
+    public function backupHandle(BackupRequest $request): Json
     {
         return $this->success('');
     }
@@ -36,7 +40,7 @@ class DatabaseController extends BaseController
     /**
      * 数据库回滚
      */
-    public function rollbackHandle(): Json
+    public function rollbackHandle(RollbackRequest $request): Json
     {
         return $this->success('');
     }
@@ -44,7 +48,7 @@ class DatabaseController extends BaseController
     /**
      * 删除备份
      */
-    public function destroyHandle(): Json
+    public function destroyHandle(DestroyRequest $request): Json
     {
         return $this->success('');
     }
