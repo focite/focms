@@ -31,10 +31,6 @@ class AuthController extends Controller
     {
         $callback = $request->get('callback', '/');
 
-        if (!session('?' . GlobalConst::SYSTEM_TOKEN)) {
-            return redirect('/');
-        }
-
         return view('login', ['callback' => urldecode($callback)]);
     }
 
@@ -43,10 +39,6 @@ class AuthController extends Controller
      */
     public function loginHandle(Request $request): Json
     {
-        if (!session('?' . GlobalConst::SYSTEM_TOKEN)) {
-            return $this->error('Illegal request');
-        }
-
         try {
             validate(LoginRequest::class)->check($request->post());
         } catch (ValidateException $e) {

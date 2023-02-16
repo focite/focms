@@ -38,6 +38,11 @@
             form = layui.form,
             popup = layui.popup;
 
+        $.ajaxSetup({
+            contentType: 'application/json',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+        });
+
         var loadCaptcha = function () {
             var codeImg = $('.codeImage');
             var captcha = codeImg.attr('src').split('?');
@@ -48,7 +53,7 @@
 
         form.on('submit(login)', function (data) {
             data.field.password = encrypt.md5(data.field.password)
-            $.post("{:route('console/auth/login')}", data.field, function (res) {
+            $.post("{:route('console/auth/login')}", JSON.stringify(data.field), function (res) {
                 if (res.code !== 0) {
                     popup.failure(res.message);
                     loadCaptcha();
